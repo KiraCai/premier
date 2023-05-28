@@ -1,0 +1,17 @@
+https://github.com/KataAcademy?tab=repositories
+
+1 Работа с БД. JDBC и Hibernate.
+https://github.com/KataAcademy/PP_1_1_3-4_JDBC_Hibernate.git
+
+2.
+2.1.2 https://github.com/KataAcademy/PP_2_1_2_Spring_HelloWorld.git
+2.1.3 https://github.com/KataAcademy/PP_2_1_2_Spring_HelloWorld.git
+2.1.4 https://github.com/KataAcademy/PP_2_1_4_spring-types-of-wiring.git
+
+2.2.1 https://github.com/KataAcademy/PP_2_2_1_spring_hibernate.git
+2.2.2. https://github.com/KataAcademy/PP_2_2_2_spring-mvc.git
+
+2.3 свое
+
+3. Весь модуль - продолжение проекта из 2.
+3.1.2 https://github.com/KataAcademy/PP_3_1_2_Boot_Security.git

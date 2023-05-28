@@ -1,4 +1,4 @@
-package src.main.java.task354;
+package src.main.java.prepay.task354;
 /**
  *В классе Main создайте метод static void printJavaWord(int count), который будет принимать целочисленный параметр и выводить в консоль слово “Java” равное ему количество раз.
  *

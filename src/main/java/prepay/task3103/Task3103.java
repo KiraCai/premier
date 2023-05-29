@@ -16,11 +16,14 @@ package src.main.java.prepay.task3103;
  * 6. У объекта класса Human должен быть вызван метод sayHello()
  * 7. Класс Human должен быть статическим, метод main находится вне этого класса
  */
-static public void main(String[] args){
+public class Main {
+    static Task3103 human = new Task3103();
+    static public void main(String[] args) {
         human.age;
         human.name;
-        System.out.println(human)
-        }
+        System.out.println(human);
+    }
+}
 public class Task3103 {
     String name = "Денис";
     int age = 8;

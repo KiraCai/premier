@@ -15,7 +15,8 @@ public class Task354 {
     }
     public static void printJavaWord(int count) {
         int i = 0;
-        while(i < count){
+        //NIT пробел после while (JCC 7.6)
+        while (i < count){
             System.out.println("Java");
             i++;
         }

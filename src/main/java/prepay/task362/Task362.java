@@ -19,6 +19,7 @@ public class Task362 {
         System.out.println(determineRainfall(8,12));
     }
     public static long determineRainfall(double area, double rainfallAmount) {
+        //NIT большие числа писать с разделителем 1_000_000
         return (long) (rainfallAmount * 2000000 * area);
     }
 }

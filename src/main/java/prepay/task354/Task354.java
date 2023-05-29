@@ -1,6 +1,7 @@
 package src.main.java.prepay.task354;
 /**
- *В классе Main создайте метод static void printJavaWord(int count), который будет принимать целочисленный параметр и выводить в консоль слово “Java” равное ему количество раз.
+ *В классе Main создайте метод static void printJavaWord(int count), который будет принимать целочисленный параметр
+ * и выводить в консоль слово “Java” равное ему количество раз.
  *
  * Требования:
  * 1. Метод должен иметь модификаторы public static
@@ -15,8 +16,7 @@ public class Task354 {
     }
     public static void printJavaWord(int count) {
         int i = 0;
-        //NIT пробел после while (JCC 7.6)
-        while (i < count){
+        while (i < count) {
             System.out.println("Java");
             i++;
         }

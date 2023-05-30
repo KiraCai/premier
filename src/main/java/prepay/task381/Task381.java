@@ -18,7 +18,6 @@ import java.util.Scanner;
  * 4. Методы не должны ничего выводить в консоль
  */
 public class Task381 {
-    //NIT перепутала - возвращать наименьший, а не наоборот
     public static void main(String[] args){
         int x = 5;
         int y = 6;
@@ -26,15 +25,11 @@ public class Task381 {
         System.out.println(getMinFromFour(x, y, 8,2));
     }
     public static int getMinFromTwo(int x, int y){
-        return Math.max(x, y);
+        return Math.min(x, y);
     }
 
-    //NIT
-    // Во первых, можно было бы и max2 вычислить с помощью метода getMinFromTwo
-    // Во вторых, можно тогда и не объявлять max2 раз у тебя нет результата сравнения для другой пары
     public static int getMinFromFour(int x, int y, int m, int n){
-        int max2 = Math.max(m, n);
-        return Math.max(getMinFromTwo(x, y), max2);
+        return Math.min(getMinFromTwo(x, y), getMinFromTwo(m, n));
 
     }
 }

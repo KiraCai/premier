@@ -29,11 +29,9 @@ import java.util.Scanner;
 public class Task372 {
     public static void main(String[] args) {
         System.out.println("Как вас зовут?");
-        //FIXME объект типа Scanner не содержит в себе имя, он только умеет его вычитывать, нужно назвать просто scanner
-        Scanner name = new Scanner(System.in);
-        //NIT а вот это содержит
-        String nameInput = name.nextLine();
-        System.out.println("Здравствуйте, " + nameInput + "!");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println("Здравствуйте, " + name + "!");
     }
 
 }

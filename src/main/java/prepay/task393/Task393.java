@@ -21,6 +21,7 @@ public class Task393 {
     }
     public static int[] fillArray(int x){
         int[] array = new int[x];
+        //FIXME - кодстайл для for JCC 6.2 (там есть пример)
         for(int i = 0; i < array.length;i ++){
             array[i] = i;
         }

@@ -30,10 +30,11 @@ public class Game1 {
         int highLim = scanner.nextInt();
         int num = whatsNumber(lowLim, highLim);
         System.out.println(" Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
+        scanner.nextLine();
         String answerNext = scanner.nextLine();
 
         if ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
-            while (answerNext != "Верно"){
+            while ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
                 System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
                 answerNext = scanner.nextLine();
                 if (answerNext.equals("Больше")){

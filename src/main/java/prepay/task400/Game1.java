@@ -19,7 +19,38 @@ package src.main.java.prepay.task400;
  Загаданное число 29. Определено за 2 попытки
  Конец игры
  */
+import java.util.Scanner;
 public class Game1 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Старт игры");
+        System.out.println("Введите нижний предел");
+        int lowLim = scanner.nextInt();
+        System.out.println("Введите верхний предел");
+        int highLim = scanner.nextInt();
+        int num = whatsNumber(lowLim, highLim);
+        System.out.println(" Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
+        String answerNext = scanner.nextLine();
+
+        if ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
+            while (answerNext != "Верно"){
+                System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
+                answerNext = scanner.nextLine();
+                if (answerNext.equals("Больше")){
+                lowLim = num;
+                num = whatsNumber(lowLim, highLim);
+            }
+                else {
+                highLim = num;
+                num = whatsNumber(lowLim, highLim);
+            }
+        }}
+        else {
+            System.out.println("Загаданное число" + num + ". Определено за 1 попытку");
+        }
+    }
+    public static int whatsNumber(int low, int high){
+        int number = ((high-low)/2)+low;
+        return number;
     }
 }

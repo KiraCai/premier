@@ -19,8 +19,13 @@ package src.main.java.prepay.task400;
  Загаданное число 29. Определено за 2 попытки
  Конец игры
  */
+
+//FIXME аннотация import должна идти после аннотации package (в самом вверху) разделясюь от нее пустой строкой
+// джава док отделятся пустой строкой от import
+// после джавадока объявляется класс, не отделяясь пустой строкой
 import java.util.Scanner;
 public class Game1 {
+    //FIXME Не выполняется условие "Когда игра число угадает, она должна вывести в консоль за какое количество попыток число было угадано."
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Старт игры");
@@ -30,9 +35,11 @@ public class Game1 {
         int highLim = scanner.nextInt();
         int num = whatsNumber(lowLim, highLim);
         System.out.println(" Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
+        //TODO попробовать убрать это и использовать scanner.next()
         scanner.nextLine();
         String answerNext = scanner.nextLine();
 
+        //FIXME поправить кодстайл для if и while (пробелы, отступы)
         if ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
             while ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
                 System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
@@ -50,6 +57,7 @@ public class Game1 {
             System.out.println("Загаданное число" + num + ". Определено за 1 попытку");
         }
     }
+    //NIT название метода должно пояснять, что он делает и желательно быть глаголом или словосочетанием, начинающимся с глагола
     public static int whatsNumber(int low, int high){
         int number = ((high-low)/2)+low;
         return number;

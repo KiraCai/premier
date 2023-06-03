@@ -1,5 +1,7 @@
 package src.main.java.prepay.task400;
 
+import java.util.Scanner;
+
 /**
  * Реализовать игру, определяющая загаданное игроком целое число.
  * При запуске игры вводится диапозон, в котором лежит загаданное число.
@@ -19,46 +21,38 @@ package src.main.java.prepay.task400;
  Загаданное число 29. Определено за 2 попытки
  Конец игры
  */
-
-//FIXME аннотация import должна идти после аннотации package (в самом вверху) разделясюь от нее пустой строкой
-// джава док отделятся пустой строкой от import
-// после джавадока объявляется класс, не отделяясь пустой строкой
-import java.util.Scanner;
 public class Game1 {
-    //FIXME Не выполняется условие "Когда игра число угадает, она должна вывести в консоль за какое количество попыток число было угадано."
     public static void main(String[] args) {
+        int count = 1;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Старт игры");
         System.out.println("Введите нижний предел");
         int lowLim = scanner.nextInt();
         System.out.println("Введите верхний предел");
         int highLim = scanner.nextInt();
-        int num = whatsNumber(lowLim, highLim);
+        int num = getNumber(lowLim, highLim);
         System.out.println(" Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
-        //TODO попробовать убрать это и использовать scanner.next()
-        scanner.nextLine();
-        String answerNext = scanner.nextLine();
-
-        //FIXME поправить кодстайл для if и while (пробелы, отступы)
-        if ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
-            while ( answerNext.equals("Больше") || answerNext.equals("Меньше") ){
+        String answerNext = scanner.next();
+        if (answerNext.equals("Больше") || answerNext.equals("Меньше")) {
+            while (answerNext.equals("Больше") || answerNext.equals("Меньше")) {
+                count ++;
                 System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
-                answerNext = scanner.nextLine();
-                if (answerNext.equals("Больше")){
-                lowLim = num;
-                num = whatsNumber(lowLim, highLim);
+                answerNext = scanner.next();
+                if (answerNext.equals("Больше")) {
+                    lowLim = num;
+                    num = getNumber(lowLim, highLim);
             }
                 else {
-                highLim = num;
-                num = whatsNumber(lowLim, highLim);
+                    highLim = num;
+                    num = getNumber(lowLim, highLim);
             }
-        }}
+        }
+            System.out.println("Загаданное число" + num + ". Определено за " + (count -1)  + " попытки");}
         else {
-            System.out.println("Загаданное число" + num + ". Определено за 1 попытку");
+            System.out.println("Загаданное число" + num + ". Определено за " + count + " попытку");
         }
     }
-    //NIT название метода должно пояснять, что он делает и желательно быть глаголом или словосочетанием, начинающимся с глагола
-    public static int whatsNumber(int low, int high){
+    public static int getNumber(int low, int high){
         int number = ((high-low)/2)+low;
         return number;
     }

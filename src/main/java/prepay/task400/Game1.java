@@ -22,13 +22,6 @@ import java.util.Scanner;
  Конец игры
  */
 public class Game1 {
-    //FIXME Первые две попытки угадать - одно и тоже число. Можно первую попытку тоже делать внутри while, задав answerNext = "";
-    // Условие answerNext.equals("Больше") || answerNext.equals("Меньше") эквивалентно !answerNext.equals("Верно")
-    // Кодстайл для if-else
-    // Имя getNumber не отражает все таки смысл метода, как вариант getAverageNumber
-    // В методе getNumber сразу возвращать результат без объявления переменной
-
-    //NIT можно использовать пустые строки для группирования частей алгоритмы по смыслу и облегчения чтения (но не злоупотреблять)
     public static void main(String[] args) {
         int count = 1;
         Scanner scanner = new Scanner(System.in);
@@ -37,21 +30,20 @@ public class Game1 {
         int lowLim = scanner.nextInt();
         System.out.println("Введите верхний предел");
         int highLim = scanner.nextInt();
-        int num = getNumber(lowLim, highLim);
-        System.out.println(" Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
-        String answerNext = scanner.next();
-        if (answerNext.equals("Больше") || answerNext.equals("Меньше")) {
-            while (answerNext.equals("Больше") || answerNext.equals("Меньше")) {
+        int num = getAverageNumber(lowLim, highLim);
+        String answerNext = "";
+
+        if (!answerNext.equals("Верно")) {
+            while (!answerNext.equals("Верно")) {
                 count ++;
                 System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
                 answerNext = scanner.next();
                 if (answerNext.equals("Больше")) {
                     lowLim = num;
-                    num = getNumber(lowLim, highLim);
-            }
-                else {
+                    num = getAverageNumber(lowLim, highLim);
+            }   else {
                     highLim = num;
-                    num = getNumber(lowLim, highLim);
+                    num = getAverageNumber(lowLim, highLim);
             }
         }
             System.out.println("Загаданное число" + num + ". Определено за " + (count -1)  + " попытки");}
@@ -59,8 +51,8 @@ public class Game1 {
             System.out.println("Загаданное число" + num + ". Определено за " + count + " попытку");
         }
     }
-    public static int getNumber(int low, int high){
-        int number = ((high-low)/2)+low;
-        return number;
+
+    public static int getAverageNumber(int low, int high){
+        return ((high-low)/2)+low;
     }
 }

@@ -22,6 +22,13 @@ import java.util.Scanner;
  Конец игры
  */
 public class Game1 {
+    //FIXME Первые две попытки угадать - одно и тоже число. Можно первую попытку тоже делать внутри while, задав answerNext = "";
+    // Условие answerNext.equals("Больше") || answerNext.equals("Меньше") эквивалентно !answerNext.equals("Верно")
+    // Кодстайл для if-else
+    // Имя getNumber не отражает все таки смысл метода, как вариант getAverageNumber
+    // В методе getNumber сразу возвращать результат без объявления переменной
+
+    //NIT можно использовать пустые строки для группирования частей алгоритмы по смыслу и облегчения чтения (но не злоупотреблять)
     public static void main(String[] args) {
         int count = 1;
         Scanner scanner = new Scanner(System.in);

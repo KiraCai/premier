@@ -36,12 +36,15 @@ public class Game2 {
         System.out.println("Число загадано");
         //две строки ниже из интернета, но я прочитала обоснование и поняла
         highLim -= lowLim;
+        //NIT имя переменной должно отражать смысл значения
         int i = ((int) (Math.random() * ++highLim)) + lowLim;
         System.out.println("Введите число");
+        //NIT имя переменной должно отражать смысл значения
         int num = scanner.nextInt();
         if (num != i) {
             while (num != i) {
                 count ++;
+                //FIXME кодстайл if-else
                 if (num<i) {
                     System.out.println("Неверно. Загаданное число больше. Введите новое число");
                     num = scanner.nextInt();

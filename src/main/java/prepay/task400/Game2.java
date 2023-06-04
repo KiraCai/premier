@@ -46,15 +46,13 @@ public class Game2 {
         if (numberPerson != randomNumber) {
             while (numberPerson != randomNumber) {
                 count ++;
+               //numberPerson = scanner.nextInt();
                 if (numberPerson < randomNumber) {
                     System.out.println("Неверно. Загаданное число больше. Введите новое число");
-                    // NIT эту строчку
-                    numberPerson = scanner.nextInt();
                 } else {
                     System.out.println("Неверно. Загаданное число меньше. Введите новое число");
-                    // NIT и эту строчку можно вынести за if-else
-                    numberPerson = scanner.nextInt();
                 }
+                numberPerson = scanner.nextInt();
             }
             System.out.println("Верно. Загаданное число определено за " + count + " попытки");
         } else {

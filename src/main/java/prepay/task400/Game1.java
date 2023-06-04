@@ -48,9 +48,9 @@ public class Game1 {
                     num = getAverageNumber(lowLim, highLim);
             }
         }
-            System.out.println("Загаданное число" + finalNum + ". Определено за " + (count -1)  + " попытки");}
+            System.out.println("Загаданное число " + finalNum + ". Определено за " + (count -1)  + " попытки");}
         else {
-            System.out.println("Загаданное число" + num + ". Определено за " + count + " попытку");
+            System.out.println("Загаданное число " + num + ". Определено за " + count + " попытку");
         }
     }
 

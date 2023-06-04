@@ -16,10 +16,6 @@ public class Task352 {
         System.out.println(incrementIfPositive(7));
     }
     public static int incrementIfPositive(int a) {
-        //FIXME после открывающей скобки с новой строки (JCC 7.4)
-        //TODO реализовать также через тернарный
-        if (a > 0) {a+=1;
-        }
-        return a;
+       return a > 0 ? a = a+1 : a;
     }
 }

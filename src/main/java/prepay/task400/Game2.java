@@ -30,23 +30,29 @@ public class Game2 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Старт игры");
         System.out.println("Введите нижний предел");
+
         int lowLim = scanner.nextInt();
         System.out.println("Введите верхний предел");
+
         int highLim = scanner.nextInt();
         System.out.println("Число загадано");
+
         //две строки ниже из интернета, но я прочитала обоснование и поняла
         highLim -= lowLim;
         int randomNumber = ((int) (Math.random() * ++highLim)) + lowLim;
+
         System.out.println("Введите число");
         int numberPerson = scanner.nextInt();
         if (numberPerson != randomNumber) {
             while (numberPerson != randomNumber) {
                 count ++;
-                if (numberPerson<randomNumber) {
+                if (numberPerson < randomNumber) {
                     System.out.println("Неверно. Загаданное число больше. Введите новое число");
+                    // NIT эту строчку
                     numberPerson = scanner.nextInt();
                 } else {
                     System.out.println("Неверно. Загаданное число меньше. Введите новое число");
+                    // NIT и эту строчку можно вынести за if-else
                     numberPerson = scanner.nextInt();
                 }
             }

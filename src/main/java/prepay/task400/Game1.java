@@ -32,11 +32,13 @@ public class Game1 {
         int highLim = scanner.nextInt();
         int num = getAverageNumber(lowLim, highLim);
         String answerNext = "";
+        int finalNum = 0;
 
         if (!answerNext.equals("Верно")) {
             while (!answerNext.equals("Верно")) {
                 count ++;
                 System.out.println("Загаданное число - " + num + " ? (Верно/Меньше/Больше)");
+                finalNum = num;
                 answerNext = scanner.next();
                 if (answerNext.equals("Больше")) {
                     lowLim = num;
@@ -46,7 +48,7 @@ public class Game1 {
                     num = getAverageNumber(lowLim, highLim);
             }
         }
-            System.out.println("Загаданное число" + num + ". Определено за " + (count -1)  + " попытки");}
+            System.out.println("Загаданное число" + finalNum + ". Определено за " + (count -1)  + " попытки");}
         else {
             System.out.println("Загаданное число" + num + ". Определено за " + count + " попытку");
         }

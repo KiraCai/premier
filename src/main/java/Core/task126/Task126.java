@@ -1,5 +1,6 @@
 package src.main.java.Core.task126;
 
+import java.util.Scanner;
 /**
  * Цель: научиться применять арифметические вычисления
  *

@@ -38,10 +38,6 @@ public class Task133 {
         System.out.println(getAgeDiff(age01, age02));
     }
     public static byte getAgeDiff(byte age1, byte age2){
-        byte deltaByte = (byte) (age1 - age2);
-        int deltaInt = (int)deltaByte;
-        int absInt = Math.abs(deltaInt);
-        byte absByte = (byte)absInt;
-        return absByte;
+        return (byte) Math.abs(age1 - age2);
     }
 }

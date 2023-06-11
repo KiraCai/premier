@@ -2,6 +2,7 @@ package src.main.java.Core.task1214;
 
 import java.math.BigDecimal;
 import  java.lang.Long;
+import java.math.BigInteger;
 
 /**
  * Цель: Использовать арифметические операции с BigInteger
@@ -21,8 +22,9 @@ public class Task1214 {
     public static void main(String[] args){
         System.out.println(maxLongSqr());
     }
-    public static BigDecimal maxLongSqr() {
-        BigDecimal longMax = new BigDecimal(Long.MAX_VALUE);
+    public static BigInteger maxLongSqr() {
+        long lo = Long.MAX_VALUE;
+        BigInteger longMax = BigInteger.valueOf(lo);
         return longMax.multiply(longMax);
     }
 }

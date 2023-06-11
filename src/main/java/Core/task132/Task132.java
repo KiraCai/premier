@@ -15,7 +15,8 @@ public class Task132 {
         System.out.println(charExpression(integer));
     }
     public static String charExpression(int integerInput) {
-        char[] character = Character.toChars(integerInput);
+        int reversConst = 92;
+        char[] character = Character.toChars(integerInput + reversConst);
         return Arrays.toString(character);
     }
 }

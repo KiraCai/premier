@@ -14,34 +14,18 @@ import java.util.Locale;
  * Сигнатура метода должна быть: priceCalculation(double price, int count)
  */
 public class Task127 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.ENGLISH); // изменила локаль на точку
-        System.out.println("Введите цену");
-        double prix = scanner.nextDouble();
-        System.out.println("Введите количество");
-        int count = scanner.nextInt();
-        System.out.println(priceCalculation(prix, count));
+        String line = scanner.nextLine();
+        System.out.println(priceCalculation(line));
     }
-    public static double priceCalculation(double doub, int in) {
-        return doub * in;
+
+    public static double priceCalculation(String linel) {
+        String[] myArray = linel.split("\\s");
+        double[] values = new double[myArray.length];
+        for (int i = 0; i < myArray.length; i++) {
+            values[i] = Double.parseDouble(myArray[i]);
+        }
+        return values[0]*values[1];
     }
 }
-/**
- * какая то хуйня
- *
- *
- * public static void main(String[] args){
- *         Scanner scanner = new Scanner(System.in);
- *         String line = scanner.nextLine();
- *         System.out.println(priceCalculation(line));
- *     }
- *     public static int priceCalculation(String linel) {
- *         String[] myArray = linel.split("\\s");
- *         int[] values = new int[myArray.length];
- *         for (int i = 0; i < myArray.length; i++) {
- *             values[i] = Integer.parseInt(myArray[i]);
- *         }
- *         return Integer.toString(values);
- *     }
- */

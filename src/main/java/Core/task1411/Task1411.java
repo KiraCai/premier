@@ -30,10 +30,10 @@ public class Task1411 {
     }
     public static boolean isWeekend(String weekday) {
         boolean boo = false;
-        if (weekday.equals("Saturday") || weekday.equals("Sunday")){
+        if (weekday.equals("Saturday") || weekday.equals("Sunday")) {
             boo = true;
+        } else { boo = false;
         }
-        else {boo = false;}
         return boo;
     }
 }

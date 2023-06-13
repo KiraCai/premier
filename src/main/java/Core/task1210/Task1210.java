@@ -1,6 +1,4 @@
 package src.main.java.Core.task1210;
-//NIT импорт лишний
-import java.math.BigDecimal;
 
 /**
  * Урок с кодом
@@ -14,15 +12,14 @@ import java.math.BigDecimal;
  */
 public class Task1210 {
     public static void main(String[] args){
-        //FIXME проверить для a = 5, b = 3, c = 8
-        double aNumber = 5.909870989;
-        double bNumber = 8.32458;
-        double cNumber = 3.078886;
+        double aNumber = 5;
+        double bNumber = 3;
+        double cNumber = 8;
         double tol = 0.0001;
         System.out.println("правда ли, что a + b = c ?");
         System.out.println(doubleExpression(aNumber, bNumber, cNumber, tol));
     }
     public static boolean doubleExpression(double a, double b, double c, double toleranse) {
-        return a + b - c == toleranse;
+        return a + b - c <= toleranse;
     }
 }

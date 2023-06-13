@@ -2,6 +2,7 @@ package src.main.java.Core.task1213;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.lang.Math;
 
 /**
  * Цель: Вычисление радиуса окрудности по площади с использованием класса Math.
@@ -21,7 +22,7 @@ import java.text.DecimalFormat;
  *
  * Пример ввода: 123
  *
- * Пример вывода: 6.257 //FIXME не выполняется
+ * Пример вывода: 6.257
  *
  * Пример ввода: 10
  *
@@ -29,11 +30,11 @@ import java.text.DecimalFormat;
  */
 public class Task1213 {
     public static void main(String[] args) {
-        double area = 10;
+        double area = 123;
         System.out.println(calcCircleRaduis(area));
     }
     public static double calcCircleRaduis(double area) {
         double pi = Math.PI;
-        return Math.pow(Math.sqrt(area/pi), 3);
+        return Math.round((Math.sqrt(area/pi)) * 1000.0) / 1000.0;
     }
 }

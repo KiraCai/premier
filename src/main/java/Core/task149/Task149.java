@@ -24,7 +24,7 @@ public class Task149 {
         int age = 70;
         System.out.println(determineGroup(age));
     }
-    //NIT в качестве примера порефачил нейминги и return
+    //спасибо)
     public static int determineGroup(int age) {
             int youngGroupMinAge = 7;
             int youngGroupMaxAge = 13;

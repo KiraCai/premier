@@ -25,31 +25,30 @@ public class Task1410 {     //можно было сделать проще
         System.out.println(isWeekend(day));
     }
     public static boolean isWeekend(String weekday) {
-        //FIXME следует объявить булеву переменную и в ветвлении присваивать ей соответствующие значения
-        String s = "end";
+        boolean boo = false;
         switch (weekday){
             case "Monday":
-                s = "end";
+                boo = false;
                 break;
             case "Tuesday":
-                s = "end";
+                boo = false;
                 break;
             case "Wednesday":
-                s = "end";
+                boo = false;
                 break;
             case "Thursday":
-                s = "end";
+                boo = false;
                 break;
             case "Friday":
-                s = "end";
+                boo = false;
                 break;
             case "Saturday":
-                s = "weekend";
+                boo = true;
                 break;
             case "Sunday":
-                s = "weekend";
+                boo = true;
                 break;
         }
-        return s.equals("weekend");
+        return boo;
     }
 }

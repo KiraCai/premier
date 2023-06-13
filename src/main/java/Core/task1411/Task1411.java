@@ -28,14 +28,7 @@ public class Task1411 {
         String day = "Tuesday";
         System.out.println(isWeekend(day));
     }
-    public static boolean isWeekend(String weekday) {
-        //NIT можно не объявлять а сразу возвращать внутри ветвления
-        boolean boo = false;
-        if (weekday.equals("Saturday") || weekday.equals("Sunday")) {
-            boo = true;
-            //FIXME кодстайл
-        } else { boo = false;
-        }
-        return boo;
+    public static boolean isWeekend(String weekday) {//в п*у ветвление да здраствует свобода
+        return  (weekday.equals("Saturday") || weekday.equals("Sunday"));
     }
 }

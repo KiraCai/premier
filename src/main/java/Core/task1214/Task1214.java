@@ -23,9 +23,7 @@ public class Task1214 {
         System.out.println(maxLongSqr());
     }
     public static BigInteger maxLongSqr() {
-        //FIXME объявление лишней переменной можно сразу положить Long.MAX_VALUE
-        long lo = Long.MAX_VALUE;
-        BigInteger longMax = BigInteger.valueOf(lo);
+        BigInteger longMax = BigInteger.valueOf(Long.MAX_VALUE);
         return longMax.multiply(longMax);
     }
 }

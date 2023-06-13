@@ -24,21 +24,29 @@ public class Task149 {
         int age = 70;
         System.out.println(determineGroup(age));
     }
-    public static int determineGroup(int ag) {
-            int a = 7;
-            int b = 13;
-            int c = 14;
-            int d = 17;
-            int e = 18;
-            int f = 65;
-            int result = -1;
-            if (a<=ag && ag <= b) {
-                result = 1;
-            } else if (c<=ag && ag <= d) {
-                result = 2;
-            } else if (e<=ag && ag <= f) {
-                result = 3;
+    //NIT в качестве примера порефачил нейминги и return
+    public static int determineGroup(int age) {
+            int youngGroupMinAge = 7;
+            int youngGroupMaxAge = 13;
+            
+            int middleGroupMinAge = 14;
+            int middleGroupMaxAge = 17;
+            
+            int oldGroupMinAge = 18;
+            int oldGroupMaxAge = 65;
+
+            if (youngGroupMinAge<=age && age <= youngGroupMaxAge) {
+                return 1;
             }
-        return result;
+
+            if (middleGroupMinAge<=age && age <= middleGroupMaxAge) {
+                return 2;
+            }
+
+            if (oldGroupMinAge<=age && age <= oldGroupMaxAge) {
+                return 3;
+            }
+
+            return -1;
     }
 }

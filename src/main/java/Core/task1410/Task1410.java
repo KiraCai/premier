@@ -25,6 +25,7 @@ public class Task1410 {     //можно было сделать проще
         System.out.println(isWeekend(day));
     }
     public static boolean isWeekend(String weekday) {
+        //FIXME следует объявить булеву переменную и в ветвлении присваивать ей соответствующие значения
         String s = "end";
         switch (weekday){
             case "Monday":
@@ -48,6 +49,7 @@ public class Task1410 {     //можно было сделать проще
             case "Sunday":
                 s = "weekend";
                 break;
-        } return s.equals("weekend");
+        }
+        return s.equals("weekend");
     }
 }

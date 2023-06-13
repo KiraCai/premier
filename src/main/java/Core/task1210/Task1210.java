@@ -1,5 +1,5 @@
 package src.main.java.Core.task1210;
-
+//NIT импорт лишний
 import java.math.BigDecimal;
 
 /**
@@ -14,6 +14,7 @@ import java.math.BigDecimal;
  */
 public class Task1210 {
     public static void main(String[] args){
+        //FIXME проверить для a = 5, b = 3, c = 8
         double aNumber = 5.909870989;
         double bNumber = 8.32458;
         double cNumber = 3.078886;

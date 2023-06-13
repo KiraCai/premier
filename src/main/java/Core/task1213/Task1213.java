@@ -21,7 +21,7 @@ import java.text.DecimalFormat;
  *
  * Пример ввода: 123
  *
- * Пример вывода: 6.257
+ * Пример вывода: 6.257 //FIXME не выполняется
  *
  * Пример ввода: 10
  *
@@ -29,7 +29,7 @@ import java.text.DecimalFormat;
  */
 public class Task1213 {
     public static void main(String[] args) {
-        double area = 10.9898786;
+        double area = 10;
         System.out.println(calcCircleRaduis(area));
     }
     public static double calcCircleRaduis(double area) {

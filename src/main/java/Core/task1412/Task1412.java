@@ -21,7 +21,7 @@ package src.main.java.Core.task1412;
  * решить с использованием тернарного оператора
  */
 public class Task1412 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String day = "Saturday";
         System.out.println(checkWeekend(day));
     }

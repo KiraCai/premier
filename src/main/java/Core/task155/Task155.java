@@ -27,7 +27,6 @@ public class Task155 {
         }
     public static void getArrayMiddle(int[] numbers) {
         System.out.print('[');
-
         if (numbers.length % 2 == 0) {
             System.out.print(numbers[(numbers.length - 2) / 2] + ", " + numbers[numbers.length / 2]);
         } else {

@@ -28,13 +28,16 @@ package src.main.java.Core.task153;
  */
 public class Task153 {
     public static void main(String[] args){
-        int[] numbers = {1, 2 ,3 ,4 ,5};
+        int[] numbers = {};
         printArray(numbers);
     }
     public static void printArray(int[] num) {
+        System.out.print('[');
         for (int i = 0; i< num.length; i++) {
-            System.out.println(num[i]);
+            if(i < num.length-1){System.out.print(num[i] + ", ");}
+            else{System.out.print(num[i]);};
         }
+        System.out.println(']');
     }
 
 }

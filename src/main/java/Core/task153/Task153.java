@@ -1,5 +1,7 @@
 package src.main.java.Core.task153;
 
+import java.util.StringJoiner;
+
 /**
  * Цель: научиться выводить массив с его значениями в консоль.
  * Что нужно знать:
@@ -30,14 +32,25 @@ public class Task153 {
     public static void main(String[] args){
         int[] numbers = {};
         printArray(numbers);
+        printArray2(numbers);
     }
     public static void printArray(int[] num) {
         System.out.print('[');
         for (int i = 0; i< num.length; i++) {
-            if(i < num.length-1){System.out.print(num[i] + ", ");}
-            else{System.out.print(num[i]);};
+            if (i < num.length-1) {
+                System.out.print(num[i] + ", ");
+            } else {
+                System.out.print(num[i]);
+            }
         }
         System.out.println(']');
+    }
+    public static void printArray2(int[] num) {//гораздо лучше = похоже на питон
+        StringJoiner sj = new StringJoiner(",", "[", "}");
+        for (int i =0; i < num.length; i++) {
+            sj.add(String.valueOf(num[i]));
+        }
+        System.out.print(sj);
     }
 
 }

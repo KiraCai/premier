@@ -17,11 +17,14 @@ import java.util.Arrays;
  * Пример ввода: {}
  * Пример вывода: []
  */
+//STATUS-
 public class Task1510 {
     public static void main(String[] args){
         int[] num = {14, 16, 12};
         getArrayMiddle(num);
     }
+    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
+    //FIXME кодстайл
     public static void getArrayMiddle(int[] numbers){
         if (numbers.length%2 ==0){
             System.out.println(Arrays.toString(Arrays.copyOfRange(numbers, (numbers.length/2)-1, (numbers.length/2)+1)));

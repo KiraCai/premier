@@ -20,11 +20,13 @@ package src.main.java.Core.task155;
  * Сигнатура метода getArrayMiddle(int[] numbers)
  * Не использовать Arrays, System.arrayCopy
  */
+//STATUS-
 public class Task155 {
     public static void main(String[] args){
         int[] numbers = {1,3,5,6,7,9,11,24};
           getArrayMiddle(numbers);
         }
+    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
     public static void getArrayMiddle(int[] numbers) {
         System.out.print('[');
         if (numbers.length % 2 == 0) {

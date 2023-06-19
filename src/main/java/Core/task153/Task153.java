@@ -28,12 +28,14 @@ import java.util.StringJoiner;
  * Элементы массива отделены друг от друга запятой и пробелом.
  * Не использовать класс Arrays
  */
+//STATUS-
 public class Task153 {
     public static void main(String[] args){
         int[] numbers = {};
         printArray(numbers);
         printArray2(numbers);
     }
+    //FIXME кодстайл
     public static void printArray(int[] num) {
         System.out.print('[');
         for (int i = 0; i< num.length; i++) {
@@ -45,6 +47,7 @@ public class Task153 {
         }
         System.out.println(']');
     }
+    //FIXME кодстайл
     public static void printArray2(int[] num) {//гораздо лучше = похоже на питон
         StringJoiner sj = new StringJoiner(",", "[", "}");
         for (int i =0; i < num.length; i++) {

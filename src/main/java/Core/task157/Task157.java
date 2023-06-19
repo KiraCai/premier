@@ -23,18 +23,26 @@ import java.util.List;
  * сигнатура метода mergeAndSort(int[] firstArray, int[] secondArray)
  * Не использовать Arrays.
  */
+//STATUS-
 public class Task157 {
     public static void main(String[] args){
         int[] num = {1, 3, 7, 5};
         int[] mi = {8, 4, 2, 4};
         mergeAndSort(num, mi);
     }
+    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
+    //FIXME дополинтельно создать метод без использования коллекция и стримов
+    //FIXME кодстайл
     public static void mergeAndSort(int[] firstArray, int[] secondArray) {
         int aLen = firstArray.length;
         int bLen = secondArray.length;
         int cLen = aLen + bLen;
+
+        //FIXME only english
         int[] naitre = new int[cLen];
         int[] n = new int[cLen];
+
+        //TODO использовать for-each
         for (int i = 0; i < firstArray.length; i++) {
             n[i] = firstArray[i];
         }

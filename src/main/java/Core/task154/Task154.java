@@ -1,5 +1,7 @@
 package src.main.java.Core.task154;
 
+import src.main.java.Core.task153.Task153;
+
 /**
  * Дан массив возрастающих чисел. Даны два числа. Задача - написать метод, который из данного массива достанет ту часть, которая лежит между данными числами (включительно) и вернет ее в качестве массива.
  * Что нужно знать:
@@ -14,6 +16,7 @@ package src.main.java.Core.task154;
  * метод должен возвращать int[] (подмассив)
  * реализовать задачу без ипользования класса Arrays
  */
+//STATUS-
 public class Task154 {
     public static void main(String[] args){
         int[] num = {1, 3, 5, 6, 9, 11, 24};
@@ -21,6 +24,9 @@ public class Task154 {
         int r = 10;
         getSubArrayBetween(num, n, r);
     }
+
+    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
+    //FIXME кодстайл
     public static void getSubArrayBetween(int[] numbers, int start, int end) {
         System.out.print('[');
         for (int i = 0; i< numbers.length; i++) {

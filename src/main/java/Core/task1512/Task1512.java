@@ -11,6 +11,7 @@ import java.util.List;
  * Требования:
  * Сигнатура метода должна быть: printOddNumbers(int[] arr)
  */
+//STATUS-
 public class Task1512 {
     public static void main(String[] args) {
         int[] num = {3,5,20,8,7,3,100};
@@ -21,6 +22,9 @@ public class Task1512 {
             System.out.println(list.get(i));
         }
     }
+
+    //FIXME контракт не менять
+    //FIXME Стримы не использовать, только пройденные темы
     public static int[] printOddNumbers(int[] arr) {
         return Arrays.stream(arr).filter(numb -> numb%2 != 0).toArray();
     }

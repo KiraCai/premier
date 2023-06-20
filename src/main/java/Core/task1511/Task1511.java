@@ -18,12 +18,14 @@ import java.util.stream.IntStream;
  * Пример ввода: {} {1, 4, 3}
  * Пример вывода: [1, 3, 4]
  */
+//STATUS-
 public class Task1511 {
     public static void main(String[] args){
         int[] a = {1, 3, 7, 5};
         int[] b = {8, 4, 2, 4};
         mergeAndSort(a, b);
     }
+    //FIXME Не использовать стримы, только пройденные темы
     public static void mergeAndSort(int[] firstArray, int[] secondArray) {
         int [] ppo = IntStream.concat(Arrays.stream(firstArray), Arrays.stream(secondArray)).toArray();
         Arrays.sort(ppo);

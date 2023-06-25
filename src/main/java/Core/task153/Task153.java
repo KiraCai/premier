@@ -46,7 +46,7 @@ public class Task153 {
         }
         System.out.println(']');
     }
-    public static void printArray2(int[] num) {//гораздо лучше = похоже на питон
+    public static void printArray2(int[] num) {
         StringJoiner sj = new StringJoiner(",", "[", "}");
         for (int i = 0; i < num.length; i++) {
             sj.add(String.valueOf(num[i]));

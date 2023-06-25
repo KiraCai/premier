@@ -1,5 +1,7 @@
 package src.main.java.Core.task156;
 
+import java.util.StringJoiner;
+
 /**
  * Цель: Развернуть данный массив
  * Что нужно знать:
@@ -17,19 +19,17 @@ public class Task156 {
     int[] numbers = {1,3,5,6,7,9,11,24};
     inverseArray(numbers);
     }
-    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
-    //FIXME кодстайл
     public static void inverseArray(int[] numb) {
         int[] vers = new int[numb.length];
-        System.out.print('[');
-        for (int i =0; i<numb.length;i++) {
-            if (i < numb.length-1) {
-                vers[i] += numb[vers.length -1 - i];
-                System.out.print(vers[i]+ ", ");
+        StringJoiner sj = new StringJoiner(", ", "[", "]");
+        for (int i = 0; i < numb.length; i++) {
+            if (i < numb.length - 1) {
+                vers[i] += numb[vers.length - 1 - i];
+                sj.add(String.valueOf(vers[i]));
             } else {
-                System.out.print(numb[0]);
+                sj.add(String.valueOf(numb[0]));
             }
         }
-        System.out.print(']');
+        System.out.print(sj);
     }
     }

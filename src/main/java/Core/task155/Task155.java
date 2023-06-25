@@ -1,5 +1,7 @@
 package src.main.java.Core.task155;
 
+import java.util.StringJoiner;
+
 /**
  * Цель: Вернуть середину массив
  * Что нужно знать:
@@ -23,17 +25,16 @@ package src.main.java.Core.task155;
 //STATUS-
 public class Task155 {
     public static void main(String[] args){
-        int[] numbers = {1,3,5,6,7,9,11,24};
+        int[] numbers = {1,3,5,6,9,11,24};
           getArrayMiddle(numbers);
         }
-    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
     public static void getArrayMiddle(int[] numbers) {
-        System.out.print('[');
+        StringJoiner sj = new StringJoiner(",", "[", "]");
         if (numbers.length % 2 == 0) {
-            System.out.print(numbers[(numbers.length - 2) / 2] + ", " + numbers[numbers.length / 2]);
+            sj.add(String.valueOf(numbers[(numbers.length - 2) / 2] + ", " + numbers[numbers.length / 2]));
         } else {
-            System.out.print(numbers[numbers.length / 2]);
+            sj.add(String.valueOf(numbers[numbers.length / 2]));
         }
-        System.out.print(']');
+        System.out.print(sj);
     }
 }

@@ -35,11 +35,10 @@ public class Task153 {
         printArray(numbers);
         printArray2(numbers);
     }
-    //FIXME кодстайл
     public static void printArray(int[] num) {
         System.out.print('[');
-        for (int i = 0; i< num.length; i++) {
-            if (i < num.length-1) {
+        for (int i = 0; i < num.length; i++) {
+            if (i < num.length - 1) {
                 System.out.print(num[i] + ", ");
             } else {
                 System.out.print(num[i]);
@@ -47,13 +46,11 @@ public class Task153 {
         }
         System.out.println(']');
     }
-    //FIXME кодстайл
     public static void printArray2(int[] num) {//гораздо лучше = похоже на питон
         StringJoiner sj = new StringJoiner(",", "[", "}");
-        for (int i =0; i < num.length; i++) {
+        for (int i = 0; i < num.length; i++) {
             sj.add(String.valueOf(num[i]));
         }
         System.out.print(sj);
     }
-
 }

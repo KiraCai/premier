@@ -2,6 +2,8 @@ package src.main.java.Core.task154;
 
 import src.main.java.Core.task153.Task153;
 
+import java.util.StringJoiner;
+
 /**
  * Дан массив возрастающих чисел. Даны два числа. Задача - написать метод, который из данного массива достанет ту часть, которая лежит между данными числами (включительно) и вернет ее в качестве массива.
  * Что нужно знать:
@@ -24,20 +26,13 @@ public class Task154 {
         int r = 10;
         getSubArrayBetween(num, n, r);
     }
-
-    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
-    //FIXME кодстайл
     public static void getSubArrayBetween(int[] numbers, int start, int end) {
-        System.out.print('[');
-        for (int i = 0; i< numbers.length; i++) {
-            if (numbers[i]>=start & numbers[i]<=end) {
-                if (numbers[i]< end-1) {
-                    System.out.print(numbers[i] + ", ");
-                } else {
-                    System.out.print(numbers[i]);
+        StringJoiner sj = new StringJoiner(",", "[", "]");
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= start & numbers[i] <= end) {
+                sj.add(String.valueOf(numbers[i]));
                 }
             }
-        }
-        System.out.println(']');
+        System.out.print(sj);
     }
 }

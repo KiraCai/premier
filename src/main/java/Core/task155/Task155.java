@@ -1,5 +1,7 @@
 package src.main.java.Core.task155;
 
+import src.main.java.Core.task153.Task153;
+
 import java.util.StringJoiner;
 
 /**
@@ -24,17 +26,21 @@ import java.util.StringJoiner;
  */
 //STATUS-
 public class Task155 {
-    public static void main(String[] args){
-        int[] numbers = {1,3,5,6,9,11,24};
-          getArrayMiddle(numbers);
-        }
-    public static void getArrayMiddle(int[] numbers) {
-        StringJoiner sj = new StringJoiner(",", "[", "]");
+    public static void main(String[] args) {
+        int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};
+        int[] xert = getArrayMiddle(numbers);
+        Task153.printArray2(xert);
+    }
+    public static int[] getArrayMiddle(int[] numbers) {
         if (numbers.length % 2 == 0) {
-            sj.add(String.valueOf(numbers[(numbers.length - 2) / 2] + ", " + numbers[numbers.length / 2]));
+            int[] num2 = new int[2];
+            num2[0] = numbers[(numbers.length - 2) / 2];
+            num2[1] = numbers[numbers.length / 2];
+            return num2;
         } else {
-            sj.add(String.valueOf(numbers[numbers.length / 2]));
+            int[] num1 = new int[1];
+            num1[0] = numbers[numbers.length / 2];
+            return num1;
         }
-        System.out.print(sj);
     }
 }

@@ -20,19 +20,38 @@ import java.util.StringJoiner;
  */
 //STATUS-
 public class Task154 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] num = {1, 3, 5, 6, 9, 11, 24};
         int n = 4;
         int r = 10;
-        getSubArrayBetween(num, n, r);
+        int[] anser = getSubArrayBetween(num, n, r);
+        Task153.printArray2(anser);
     }
-    public static void getSubArrayBetween(int[] numbers, int start, int end) {
-        StringJoiner sj = new StringJoiner(",", "[", "]");
+
+    public static int[] getSubArrayBetween(int[] numbers, int start, int end) {
+        int[] newRoy = new int[(end - start)];
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] >= start & numbers[i] <= end) {
-                sj.add(String.valueOf(numbers[i]));
+                newRoy[i] = numbers[i];
+            }
+        }
+        int count = 0;
+        for (int j = 0; j < newRoy.length; j++) {
+            if (newRoy[j] == 0) {
+                count++;
+            }
+        }
+        int[] bewRoyNew = new int[newRoy.length - count];
+
+        for (int g = 0; g < newRoy.length; g++) {
+            int coun = 0;
+            for (int r = 0; r < bewRoyNew.length; r++) {
+                if (newRoy[g] != 0 & bewRoyNew[r] == 0 & coun == 0) {
+                    bewRoyNew[r] = newRoy[g];
+                    coun = coun + 1;
                 }
             }
-        System.out.print(sj);
+        }
+        return bewRoyNew;
     }
 }

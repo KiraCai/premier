@@ -28,7 +28,7 @@ import java.util.StringJoiner;
  * Элементы массива отделены друг от друга запятой и пробелом.
  * Не использовать класс Arrays
  */
-//STATUS-
+//STATUS+
 public class Task153 {
     public static void main(String[] args){
         int[] numbers = {};

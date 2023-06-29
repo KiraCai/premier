@@ -18,10 +18,14 @@ import java.util.StringJoiner;
  * метод должен возвращать int[] (подмассив)
  * реализовать задачу без ипользования класса Arrays
  */
-//STATUS-
+    //STATUS-
+    //FIXME АНГЛИЙСКИЙ
+    //FIXME имя счетчика цикла использовать i. Если циклы вложенные тогда j, k и тд
+    //FIXME Инициировать результирующий массив сразу с верным размером. Определить его можно, используя факт, что исходный отсортирован
 public class Task154 {
     public static void main(String[] args) {
         int[] num = {1, 3, 5, 6, 9, 11, 24};
+        //NIT можно именовать min max в данном случае
         int n = 4;
         int r = 10;
         int[] anser = getSubArrayBetween(num, n, r);
@@ -35,6 +39,7 @@ public class Task154 {
                 newRoy[i] = numbers[i];
             }
         }
+        //FIXME понятнее называть, чего count
         int count = 0;
         for (int j = 0; j < newRoy.length; j++) {
             if (newRoy[j] == 0) {

@@ -24,7 +24,8 @@ import java.util.StringJoiner;
  * Сигнатура метода getArrayMiddle(int[] numbers)
  * Не использовать Arrays, System.arrayCopy
  */
-//STATUS-
+    //STATUS-
+    //FIXME ПРОВЕРИТЬ НА ВХОДЯЩИЙ ПУСТОЙ МАССИВ (что должно вернуть при этом, можешь сама решить)
 public class Task155 {
     public static void main(String[] args) {
         int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};

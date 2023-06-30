@@ -19,7 +19,6 @@ import java.util.StringJoiner;
  * реализовать задачу без ипользования класса Arrays
  */
     //STATUS-
-    //FIXME имя счетчика цикла использовать i. Если циклы вложенные тогда j, k и тд
 public class Task154 {
     //public static int st = 0;
     //public static int en = 1;

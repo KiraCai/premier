@@ -17,6 +17,7 @@ import java.util.StringJoiner;
  */
 //STATUS-
 public class Task156 {
+    //FIXME именования
     public static void main(String[] args) {
         int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};
         int[] trew = inverseArray(numbers);
@@ -26,6 +27,8 @@ public class Task156 {
         int[] vers = new int[numb.length];
 
         for (int i = 0; i < numb.length; i++) {
+
+            //FIXME Зачем эти проверки?
             if (i < numb.length - 1) {
                 vers[i] += numb[vers.length - 1 - i];
             } else {

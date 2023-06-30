@@ -34,6 +34,7 @@ public class Task155 {
 
     public static int[] getArrayMiddle(int[] numbers) {
         if (numbers.length == 0) {
+            //FIXME сразу return
             int[] num0 = {};
             return num0;
         } else if (numbers.length % 2 == 0) {
@@ -43,6 +44,7 @@ public class Task155 {
             return num2;
         } else {
             int[] num1 = new int[1];
+            //FIXME сразу return
             num1[0] = numbers[numbers.length / 2];
             return num1;
         }

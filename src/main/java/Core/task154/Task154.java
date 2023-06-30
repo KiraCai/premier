@@ -32,6 +32,7 @@ public class Task154 {
     }
 
     public static int[] getSubArrayBetween(int[] numbers, int start, int end) {
+        //FIXME через while
         int startNew = 0;
         int endNew = 1;
         for (int i = 0; i < numbers.length; i++) {
@@ -40,6 +41,7 @@ public class Task154 {
                 break;
             }
         }
+        //FIXME имя счетчика цикла
         for (int o = 0; o < numbers.length; o++) {
             if (numbers[o] > end) {
                 endNew = o;
@@ -48,6 +50,7 @@ public class Task154 {
         }
         int lenghtNew = endNew - startNew;
         int[] newRoy = new int[(lenghtNew)];
+        //FIXME можно проще заполнить, помни что исходник отсортирован
         for (int i = 0; i < numbers.length; i++) {
             int counter = 0;
             for (int r = 0; r < newRoy.length; r++) {

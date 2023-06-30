@@ -19,44 +19,45 @@ import java.util.StringJoiner;
  * реализовать задачу без ипользования класса Arrays
  */
     //STATUS-
-    //FIXME АНГЛИЙСКИЙ
     //FIXME имя счетчика цикла использовать i. Если циклы вложенные тогда j, k и тд
-    //FIXME Инициировать результирующий массив сразу с верным размером. Определить его можно, используя факт, что исходный отсортирован
 public class Task154 {
+    //public static int st = 0;
+    //public static int en = 1;
     public static void main(String[] args) {
         int[] num = {1, 3, 5, 6, 9, 11, 24};
-        //NIT можно именовать min max в данном случае
-        int n = 4;
-        int r = 10;
-        int[] anser = getSubArrayBetween(num, n, r);
+        int minNum = 4;
+        int maxNum = 10;
+
+        int[] anser = getSubArrayBetween(num, minNum, maxNum);
         Task153.printArray2(anser);
     }
 
     public static int[] getSubArrayBetween(int[] numbers, int start, int end) {
-        int[] newRoy = new int[(end - start)];
+        int startNew = 0;
+        int endNew = 1;
         for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] >= start & numbers[i] <= end) {
-                newRoy[i] = numbers[i];
+            if (start < numbers[i]) {
+                startNew = i;
+                break;
             }
         }
-        //FIXME понятнее называть, чего count
-        int count = 0;
-        for (int j = 0; j < newRoy.length; j++) {
-            if (newRoy[j] == 0) {
-                count++;
+        for (int o = 0; o < numbers.length; o++) {
+            if (numbers[o] > end) {
+                endNew = o;
+                break;
             }
         }
-        int[] bewRoyNew = new int[newRoy.length - count];
-
-        for (int g = 0; g < newRoy.length; g++) {
-            int coun = 0;
-            for (int r = 0; r < bewRoyNew.length; r++) {
-                if (newRoy[g] != 0 & bewRoyNew[r] == 0 & coun == 0) {
-                    bewRoyNew[r] = newRoy[g];
-                    coun = coun + 1;
+        int lenghtNew = endNew - startNew;
+        int[] newRoy = new int[(lenghtNew)];
+        for (int i = 0; i < numbers.length; i++) {
+            int counter = 0;
+            for (int r = 0; r < newRoy.length; r++) {
+                if (numbers[i] >= start & numbers[i] <= end & newRoy[r] == 0 & counter == 0) {
+                    newRoy[r] = numbers[i];
+                    counter = counter + 1;
                 }
             }
         }
-        return bewRoyNew;
+        return newRoy;
     }
 }

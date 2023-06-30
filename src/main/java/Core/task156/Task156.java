@@ -1,5 +1,7 @@
 package src.main.java.Core.task156;
 
+import src.main.java.Core.task153.Task153;
+
 import java.util.StringJoiner;
 
 /**
@@ -16,20 +18,20 @@ import java.util.StringJoiner;
 //STATUS-
 public class Task156 {
     public static void main(String[] args) {
-    int[] numbers = {1,3,5,6,7,9,11,24};
-    inverseArray(numbers);
+        int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};
+        int[] trew = inverseArray(numbers);
+        Task153.printArray2(trew);
     }
-    public static void inverseArray(int[] numb) {
+    public static int[] inverseArray(int[] numb) {
         int[] vers = new int[numb.length];
-        StringJoiner sj = new StringJoiner(", ", "[", "]");
+
         for (int i = 0; i < numb.length; i++) {
             if (i < numb.length - 1) {
                 vers[i] += numb[vers.length - 1 - i];
-                sj.add(String.valueOf(vers[i]));
             } else {
-                sj.add(String.valueOf(numb[0]));
+                vers[i] = numb[0];
             }
         }
-        System.out.print(sj);
+        return vers;
     }
-    }
+}

@@ -34,21 +34,22 @@ public class Task154 {
     public static int[] getSubArrayBetween(int[] numbers, int start, int end) {
         //FIXME через while
         int startNew = 0;
-        int endNew = 1;
-        for (int i = 0; i < numbers.length; i++) {
-            if (start < numbers[i]) {
-                startNew = i;
-                break;
-            }
+        int endNew = 0;
+        System.out.println(numbers.length);
+        //int j = 0;
+        while (start<numbers[startNew]){
+            startNew++;
+            System.out.println(startNew);
         }
-        //FIXME имя счетчика цикла
-        for (int o = 0; o < numbers.length; o++) {
-            if (numbers[o] > end) {
-                endNew = o;
-                break;
-            }
+        //int k = 0;
+        while (end<numbers[endNew]){
+            endNew++;
+            System.out.println("блядь");
+            System.out.println(endNew);
         }
+
         int lenghtNew = endNew - startNew;
+        System.out.println(lenghtNew);
         int[] newRoy = new int[(lenghtNew)];
         //FIXME можно проще заполнить, помни что исходник отсортирован
         for (int i = 0; i < numbers.length; i++) {

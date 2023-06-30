@@ -25,15 +25,18 @@ import java.util.StringJoiner;
  * Не использовать Arrays, System.arrayCopy
  */
     //STATUS-
-    //FIXME ПРОВЕРИТЬ НА ВХОДЯЩИЙ ПУСТОЙ МАССИВ (что должно вернуть при этом, можешь сама решить)
 public class Task155 {
     public static void main(String[] args) {
-        int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};
+        int[] numbers = {};
         int[] xert = getArrayMiddle(numbers);
         Task153.printArray2(xert);
     }
+
     public static int[] getArrayMiddle(int[] numbers) {
-        if (numbers.length % 2 == 0) {
+        if (numbers.length == 0) {
+            int[] num0 = {};
+            return num0;
+        } else if (numbers.length % 2 == 0) {
             int[] num2 = new int[2];
             num2[0] = numbers[(numbers.length - 2) / 2];
             num2[1] = numbers[numbers.length / 2];

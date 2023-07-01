@@ -1,10 +1,9 @@
 package src.main.java.Core.task157;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import src.main.java.Core.task153.Task153;
+
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.List;
 
 /**
  * Цель: Слить два произвольных массива в один отсортированный
@@ -25,48 +24,44 @@ import java.util.List;
  */
 //STATUS-
 public class Task157 {
-    public static void main(String[] args){
-        int[] num = {1, 3, 7, 5};
+    public static void main(String[] args) {
+        int[] num = {4, 7, 3, 5};
         int[] mi = {8, 4, 2, 4};
-        mergeAndSort(num, mi);
+        int[] newArray = mergeAndSortNew(num, mi);
+        Task153.printArray2(newArray);
     }
-    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
-    //FIXME дополинтельно создать метод без использования коллекция и стримов
-    //FIXME кодстайл
-    public static void mergeAndSort(int[] firstArray, int[] secondArray) {
-        int aLen = firstArray.length;
-        int bLen = secondArray.length;
-        int cLen = aLen + bLen;
 
-        //FIXME only english
-        int[] naitre = new int[cLen];
-        int[] n = new int[cLen];
-
-        //TODO использовать for-each
-        for (int i = 0; i < firstArray.length; i++) {
-            n[i] = firstArray[i];
+    public static int[] mergeAndSortNew(int[] fir, int[] sec) {
+        int aL = fir.length;
+        int bL = sec.length;
+        int cL = aL + bL;
+        int[] bir = new int[aL];
+        //int[] bir = new int[cL];
+        int[] nevv = new int[cL];
+        int minInt = fir[0];
+        int I = 0;
+        int maxInt = fir[0];
+        int PI = 0;
+        // поиск максимального
+        for (int k = 0; k < fir.length; k++) {
+            if (fir[k] > maxInt) {
+                maxInt = fir[k];
+            }
         }
-        for (int i = 0; i < secondArray.length; i++) {
-            n[i+aLen] = secondArray[i];
-        }
-        int constantaLen = n.length;
-        for (int i = 0; i < constantaLen; i++){
-            List<Integer> list = Arrays.stream(n).boxed().collect(Collectors.toList());
-            List<Integer> copy = list.stream().collect(Collectors.toList());
-            Integer mi = Collections.min(list);
-            naitre[i] = mi;
-            list.removeIf(j -> (j == mi));
-            int count = list.size();
-            int countCopy = copy.size();
-            int delta = countCopy - count;
-            if (delta >1){
-                delta = delta - 1;
-                for (int g = 0; g<delta; g++){
-                    list.add(mi);
+        System.out.println(maxInt);
+        for (int i = 0; i < bir.length; i++) {
+            //fir[I] = maxInt;
+            for (int j = 0; j < fir.length; j++) {
+                if (fir[j] < minInt) {
+                    minInt = fir[j];
+                    I = j;
                 }
             }
-            n = list.stream().mapToInt(Integer::intValue).toArray();
-            System.out.println(naitre[i]);
+
+            System.out.println(bir[i]);
+            fir[I] = maxInt;
+            bir[i] = minInt;
         }
+        return bir;
     }
 }

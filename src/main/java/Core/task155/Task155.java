@@ -33,20 +33,17 @@ public class Task155 {
     }
 
     public static int[] getArrayMiddle(int[] numbers) {
+        int[] num0 = {0};
         if (numbers.length == 0) {
-            //FIXME сразу return
-            int[] num0 = {};
-            return num0;
+            return num0 = new int[0];
         } else if (numbers.length % 2 == 0) {
             int[] num2 = new int[2];
             num2[0] = numbers[(numbers.length - 2) / 2];
             num2[1] = numbers[numbers.length / 2];
             return num2;
         } else {
-            int[] num1 = new int[1];
-            //FIXME сразу return
-            num1[0] = numbers[numbers.length / 2];
-            return num1;
+            num0[0] = numbers[numbers.length / 2];
+            return num0;
         }
     }
 }

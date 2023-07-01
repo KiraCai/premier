@@ -19,6 +19,8 @@ import java.util.StringJoiner;
  * реализовать задачу без ипользования класса Arrays
  */
     //STATUS-
+    //FIXME кодстайл
+    //FIXME английский
 public class Task154 {
     //public static int st = 0;
     //public static int en = 1;
@@ -43,6 +45,7 @@ public class Task154 {
         int lenghtNew = endNew - startNew;
         int[] newRoy = new int[(lenghtNew)];
         for (int i = 0; i<newRoy.length; i++){
+            //FIXME можно переделать цикл, чтобы избежать операции сложения
             newRoy[i] = numbers[i+startNew];
         }
         return newRoy;

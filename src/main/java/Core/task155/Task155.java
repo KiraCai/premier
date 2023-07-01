@@ -33,6 +33,19 @@ public class Task155 {
     }
 
     public static int[] getArrayMiddle(int[] numbers) {
+        //FIXME посколько во всех ветвях return, можно без else (легче читается)
+        /*
+        if() {
+            return
+        }
+        if() {
+            return
+        }
+        if() {
+            return
+        }
+         */
+        //NIT переменная num0 лишняя мне кажется
         int[] num0 = {0};
         if (numbers.length == 0) {
             return num0 = new int[0];

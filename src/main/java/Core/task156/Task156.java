@@ -17,24 +17,18 @@ import java.util.StringJoiner;
  */
 //STATUS-
 public class Task156 {
-    //FIXME именования
     public static void main(String[] args) {
         int[] numbers = {1, 3, 5, 6, 7, 9, 11, 24};
-        int[] trew = inverseArray(numbers);
-        Task153.printArray2(trew);
+        int[] inversNumbers = inverseArray(numbers);
+        Task153.printArray2(inversNumbers);
     }
+
     public static int[] inverseArray(int[] numb) {
-        int[] vers = new int[numb.length];
+        int[] invers = new int[numb.length];
 
         for (int i = 0; i < numb.length; i++) {
-
-            //FIXME Зачем эти проверки?
-            if (i < numb.length - 1) {
-                vers[i] += numb[vers.length - 1 - i];
-            } else {
-                vers[i] = numb[0];
-            }
+            invers[i] += numb[invers.length - 1 - i];
         }
-        return vers;
+        return invers;
     }
 }

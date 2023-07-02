@@ -31,37 +31,52 @@ public class Task157 {
         Task153.printArray2(newArray);
     }
 
-    public static int[] mergeAndSortNew(int[] fir, int[] sec) {
-        int aL = fir.length;
-        int bL = sec.length;
-        int cL = aL + bL;
-        int[] bir = new int[aL];
-        //int[] bir = new int[cL];
-        int[] nevv = new int[cL];
-        int minInt = fir[0];
-        int I = 0;
-        int maxInt = fir[0];
-        int PI = 0;
+    public static int[] mergeAndSortNew(int[] first, int[] second) {
+        int firstLenght = first.length;
+        int secondLenght = second.length;
+        int commonLenght = firstLenght + secondLenght;
+        int[] sortFirst = new int[firstLenght];
+        int[] common = new int[commonLenght];
+        int[] sortCommon = new int[commonLenght];
+        int minInt = first[0];
+        int IChange = 0;
+        int maxInt = first[0];
+        //слияние двух в один
+        int r = 0;
+        int s = 0;
+        for (int m = 0; m<commonLenght; m++){
+            while (r<firstLenght){
+                common[r] = first[r];
+                r++;
+            }
+            while (s < secondLenght) {
+                common[firstLenght+s] = second[s];
+                s++;
+            }
+        }
         // поиск максимального
-        for (int k = 0; k < fir.length; k++) {
-            if (fir[k] > maxInt) {
-                maxInt = fir[k];
+        for (int k = 0; k < common.length; k++) {
+            if (common[k] > maxInt) {
+                maxInt = common[k];
             }
         }
-        System.out.println(maxInt);
-        for (int i = 0; i < bir.length; i++) {
-            //fir[I] = maxInt;
-            for (int j = 0; j < fir.length; j++) {
-                if (fir[j] < minInt) {
-                    minInt = fir[j];
-                    I = j;
+        int i = 0;
+        for (int k = 0; k < sortCommon.length; k++) {
+            int counter = 0;
+            while (i < common.length & counter < 1) {
+                for (int j = 0; j < common.length; j++) {
+                    if (common[j] < minInt) {
+                        minInt = common[j];
+                        IChange = j;
+                    }
                 }
+                sortCommon[k] = minInt;
+                minInt = maxInt;
+                common[IChange] = maxInt;
+                i++;
+                counter++;
             }
-
-            System.out.println(bir[i]);
-            fir[I] = maxInt;
-            bir[i] = minInt;
         }
-        return bir;
+        return sortCommon;
     }
 }

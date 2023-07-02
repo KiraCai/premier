@@ -31,32 +31,21 @@ public class Task155 {
         int[] xert = getArrayMiddle(numbers);
         Task153.printArray2(xert);
     }
-
     public static int[] getArrayMiddle(int[] numbers) {
-        //FIXME посколько во всех ветвях return, можно без else (легче читается)
-        /*
-        if() {
-            return
-        }
-        if() {
-            return
-        }
-        if() {
-            return
-        }
-         */
-        //NIT переменная num0 лишняя мне кажется
-        int[] num0 = {0};
+        int[] num0 = {};
         if (numbers.length == 0) {
             return num0 = new int[0];
-        } else if (numbers.length % 2 == 0) {
+        }
+        if (numbers.length % 2 == 0) {
             int[] num2 = new int[2];
             num2[0] = numbers[(numbers.length - 2) / 2];
             num2[1] = numbers[numbers.length / 2];
             return num2;
-        } else {
+        }
+        if (numbers.length % 2 != 0) {
             num0[0] = numbers[numbers.length / 2];
             return num0;
         }
+        return num0;
     }
 }

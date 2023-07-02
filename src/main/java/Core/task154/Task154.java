@@ -19,34 +19,31 @@ import java.util.StringJoiner;
  * реализовать задачу без ипользования класса Arrays
  */
     //STATUS-
-    //FIXME кодстайл
-    //FIXME английский
 public class Task154 {
-    //public static int st = 0;
-    //public static int en = 1;
     public static void main(String[] args) {
         int[] num = {1, 3, 5, 6, 9, 11, 24};
         int minNum = 4;
         int maxNum = 10;
-
-        int[] anser = getSubArrayBetween(num, minNum, maxNum);
-        Task153.printArray2(anser);
+        int[] answer = getSubArrayBetween(num, minNum, maxNum);
+        Task153.printArray2(answer);
     }
 
     public static int[] getSubArrayBetween(int[] numbers, int start, int end) {
         int startNew = 0;
         int endNew = 0;
-        while (start>numbers[startNew]){
+        while (start > numbers[startNew]) {
             startNew++;
         }
-        while (end>numbers[endNew]){
+        while (end > numbers[endNew]) {
             endNew++;
         }
         int lenghtNew = endNew - startNew;
         int[] newRoy = new int[(lenghtNew)];
-        for (int i = 0; i<newRoy.length; i++){
-            //FIXME можно переделать цикл, чтобы избежать операции сложения
-            newRoy[i] = numbers[i+startNew];
+        int i = 0;
+        while (i < lenghtNew) {
+            newRoy[i] = numbers[startNew];
+            i++;
+            startNew = startNew + 1;
         }
         return newRoy;
     }

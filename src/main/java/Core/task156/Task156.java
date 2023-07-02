@@ -25,10 +25,8 @@ public class Task156 {
 
     public static int[] inverseArray(int[] numb) {
         int[] invers = new int[numb.length];
-
         for (int i = 0; i < numb.length; i++) {
-            //FIXME зачем складывать
-            invers[i] += numb[invers.length - 1 - i];
+            invers[i] = numb[invers.length - 1 - i];
         }
         return invers;
     }

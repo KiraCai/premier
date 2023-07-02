@@ -1,5 +1,7 @@
 package src.main.java.Core.task1510;
 
+import src.main.java.Core.task153.Task153;
+
 import java.util.Arrays;
 
 /**
@@ -19,20 +21,20 @@ import java.util.Arrays;
  */
 //STATUS-
 public class Task1510 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] num = {14, 16, 12};
-        getArrayMiddle(num);
-    }
-    //FIXME поправить контракт, для вывода на консоль ссылаться на метод из 153
-    //FIXME кодстайл
-    public static void getArrayMiddle(int[] numbers){
-        if (numbers.length%2 ==0){
-            System.out.println(Arrays.toString(Arrays.copyOfRange(numbers, (numbers.length/2)-1, (numbers.length/2)+1)));
-        }
-        else {
-            System.out.println(Arrays.toString(Arrays.copyOfRange(numbers, (numbers.length/2), (numbers.length/2)+1)));
-        }
-
+        int[] array = getArrayMiddle(num);
+        Task153.printArray2(array);
     }
 
+    public static int[] getArrayMiddle(int[] numbers) {
+        int[] arrNew = {};
+        if (numbers.length % 2 == 0) {
+            arrNew = Arrays.copyOfRange(numbers, (numbers.length / 2) - 1, (numbers.length / 2) + 1);
+        } else {
+            arrNew = Arrays.copyOfRange(numbers, (numbers.length / 2), (numbers.length / 2) + 1);
+        }
+        return arrNew;
+
+    }
 }

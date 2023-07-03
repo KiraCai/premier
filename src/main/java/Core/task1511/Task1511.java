@@ -28,7 +28,6 @@ public class Task1511 {
         int[] newSortArray = mergeAndSort(a, b);
         Task153.printArray2(newSortArray);
     }
-    //FIXME Не использовать стримы, только пройденные темы
     public static int[] mergeAndSort(int[] firstArray, int[] secondArray) {
         int firstLength = firstArray.length;
         int secondLength = secondArray.length;

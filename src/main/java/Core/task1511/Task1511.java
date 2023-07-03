@@ -1,5 +1,7 @@
 package src.main.java.Core.task1511;
 
+import src.main.java.Core.task153.Task153;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -23,12 +25,18 @@ public class Task1511 {
     public static void main(String[] args){
         int[] a = {1, 3, 7, 5};
         int[] b = {8, 4, 2, 4};
-        mergeAndSort(a, b);
+        int[] newSortArray = mergeAndSort(a, b);
+        Task153.printArray2(newSortArray);
     }
     //FIXME Не использовать стримы, только пройденные темы
-    public static void mergeAndSort(int[] firstArray, int[] secondArray) {
-        int [] ppo = IntStream.concat(Arrays.stream(firstArray), Arrays.stream(secondArray)).toArray();
-        Arrays.sort(ppo);
-        System.out.println(Arrays.toString(ppo));
+    public static int[] mergeAndSort(int[] firstArray, int[] secondArray) {
+        int firstLength = firstArray.length;
+        int secondLength = secondArray.length;
+        int newArrayLenght = firstLength + secondLength;
+        int[] newArray = new int[firstArray.length + secondArray.length];
+        System.arraycopy(firstArray, 0, newArray, 0, firstArray.length);
+        System.arraycopy(secondArray, 0, newArray, firstArray.length, secondArray.length);
+        Arrays.sort(newArray);
+        return newArray;
     }
 }

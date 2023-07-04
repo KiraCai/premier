@@ -1,7 +1,10 @@
 package src.main.java.Core.task1512;
 
+import src.main.java.Core.task153.Task153;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * Напишите метод printOddNumbers, который принимает массив и выводит в консоль только нечетные числа из него, через запятую.
@@ -14,18 +17,18 @@ import java.util.List;
 //STATUS-
 public class Task1512 {
     public static void main(String[] args) {
-        int[] num = {3,5,20,8,7,3,100};
+        int[] num = {3, 5, 20, 8, 7, 3, 100};
         printOddNumbers(num);
-        int[] res = printOddNumbers(num);
-        List<int[]> list = Arrays.asList(res);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
-        }
     }
 
-    //FIXME контракт не менять
-    //FIXME Стримы не использовать, только пройденные темы
-    public static int[] printOddNumbers(int[] arr) {
-        return Arrays.stream(arr).filter(numb -> numb%2 != 0).toArray();
+    public static void printOddNumbers(int[] arr) {
+        int del = 0;
+        StringJoiner sj = new StringJoiner(",", "", "");
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] % 2 != del) {
+                sj.add(String.valueOf(arr[i]));
+            }
+        }
+        System.out.print(sj);
     }
 }

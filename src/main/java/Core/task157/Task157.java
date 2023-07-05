@@ -25,10 +25,26 @@ import java.util.stream.Collectors;
 //STATUS-
 public class Task157 {
     public static void main(String[] args) {
-        int[] num = {4, 7, 3, 5};
+        int[] num = {4, 7, 3, 5, 1, 8, 2};
         int[] mi = {8, 4, 2, 4};
         int[] newArray = mergeAndSortNew(num, mi);
         Task153.printArray2(newArray);
+        int[] newArray2 = mergeAndSortNew1(num, mi);
+        Task153.printArray2(newArray2);
+    }
+
+    public static int[] mergeAndSortNew1(int[] arr1, int[] arr2) {
+        int variable = 0;
+        for (int j = 0; j < arr1.length; j++) {
+            for (int i = 0; i < arr1.length - 1; i++) {
+                if (arr1[i] > arr1[i + 1]) {
+                    variable = arr1[i];
+                    arr1[i] = arr1[i + 1];
+                    arr1[i + 1] = variable;
+                }
+            }
+        }
+        return arr1;
     }
 
     public static int[] mergeAndSortNew(int[] first, int[] second) {
@@ -44,13 +60,13 @@ public class Task157 {
         //слияние двух в один
         int r = 0;
         int s = 0;
-        for (int m = 0; m<commonLenght; m++){
-            while (r<firstLenght){
+        for (int m = 0; m < commonLenght; m++) {
+            while (r < firstLenght) {
                 common[r] = first[r];
                 r++;
             }
             while (s < secondLenght) {
-                common[firstLenght+s] = second[s];
+                common[firstLenght + s] = second[s];
                 s++;
             }
         }

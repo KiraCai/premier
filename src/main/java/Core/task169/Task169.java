@@ -16,6 +16,7 @@ package src.main.java.Core.task169;
  * such as madam or racecar or the number 10801.
  * Пример вывода 2: false
  * Требования:
+ *
  * 1. Должен быть доступный статический метод boolean isPalindrome(String text)
  * 2. Работа метода должна удовлетворять условию
  */

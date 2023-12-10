@@ -66,59 +66,34 @@ public class Task1612 {
         System.out.println(printTextPerRole(role, textLine));
     }
     public static String printTextPerRole(String[] roles, String[] textLines) {
-        StringBuilder sortBil = new StringBuilder();
-        StringBuilder bilder = new StringBuilder();
-        StringBuilder bild = new StringBuilder();
-        String bil;
-        String bi;
+        StringBuilder sortedList = new StringBuilder();
+        StringBuilder bilderRole = new StringBuilder();
+        String bilderRoleString;
         String bildString;
-        String bilStr;
-        String biS;
-        String biSTTT;
+        String builderTextLinesForSortString;
+        String builderTextLinesString;
         for (int i = 0; i < roles.length; i++) {
-            bilder.append(roles[i]);
-            bi = bilder.toString();
-            sortBil.append(bi);
-            //sortBil.delete(0, sortBil.length());
-            //System.out.println(bilder);
+            bilderRole.append(roles[i]);
+            bilderRoleString = bilderRole.toString();
+            sortedList.append(bilderRoleString);
             for (int j = 0; j <textLines.length; j++) {
-                bild.append(textLines[j]);
-                biSTTT = bild.toString();
-                bil = bild.substring(0, bi.length());
-
-                biS = bil.toString();
-
-                if (biSTTT.contains(bi)) {
-                    bilStr = bild.toString();
-                //if (bi.equals(bil)) {
-                    //System.out.println("khjhk");
-                    bildString = bilStr.replace(biS,""); // подходит
-                    //System.out.println(bildString + "fdhfjtjhgfsdfgkjhfgfhjkgjghfgjkfD");
-                    sortBil.append('\n');
-                    sortBil.append(j+1 + "");
-                    sortBil.append(bildString);
-                    bild.delete(0, bild.length());
-                    System.out.println(bildString instanceof String);
-                    //bildString.delete(0, bildString.length());
-                    continue;
+                StringBuilder builderTextLines = new StringBuilder();
+                builderTextLines.append(textLines[j]);
+                builderTextLinesString = builderTextLines.toString();
+                if (builderTextLinesString.contains(bilderRoleString)) {
+                    builderTextLinesForSortString = builderTextLines.toString();
+                    bildString = builderTextLinesForSortString.replace(bilderRoleString + ": ", "");
+                    sortedList.append('\n');
+                    sortedList.append(j + 1 + ") ");
+                    sortedList.append(bildString);
                 }
-                else {
-                    sortBil.append("");
-                    continue;
-                }
-                //sortBil.append(bil);
-                //sortBil.append('\n');
-                //bild.delete(0, bild.length());
             }
-            bilder.delete(0, bilder.length());
-            sortBil.append('\n');
-
+            bilderRole.delete(0, bilderRole.length());
+            sortedList.append('\n');
+            sortedList.append('\n');
         }
-
-        String rew = sortBil.toString();
-        sortBil.delete(0, sortBil.length());
+        String rew = sortedList.toString();
+        sortedList.delete(0, sortedList.length());
         return rew;
-
-
     }
 }

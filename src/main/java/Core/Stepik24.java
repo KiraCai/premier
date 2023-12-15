@@ -28,16 +28,31 @@ public class Stepik24 {
         Integer [] integerArray2 = IntStream.of(a2).boxed().toArray(Integer []::new);
         List<Integer> listA1 = Arrays.asList(integerArray1);
         List<Integer> listA2 = Arrays.asList(integerArray2);
+        System.out.println(listA2 instanceof List);
 
         int i = 0;
         while (i <= myArraySort.length){
             int a11 = listA1.get(i);
             int a22 = listA2.get(i);
             System.out.println("итерация"+ i);
+            System.out.println(a11);
+            System.out.println(a22);
+            ////////////////////////////
 
+            int myInt = 7;
+            List<Integer> list = new ArrayList<Integer>();
+            list.add(myInt);
+
+            System.out.println(list.get(0)); //prints 7
+            ///////////////////////////////////
             if(a11 <= a22){
+                System.out.println("первое условие");
                 myArraySort[i] = a11;
-                listA2.add(0, 0);
+                System.out.println(myArraySort[i]);
+                int adAdd = 9;
+                listA2.add(adAdd);
+                System.out.println("идёт дальше");
+                System.out.println(listA2.get(0));
             }
             else {
                 myArraySort[i] = a22;

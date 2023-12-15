@@ -1,5 +1,8 @@
 package src.main.java.Core;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
 
 /*
  * Merges two given sorted arrays into one
@@ -15,17 +18,40 @@ public class Stepik24 {
         int[] myArray2 = {1, 3};
         System.out.println(mergeArrays(myArray1, myArray2));
     }
-    public static int[] mergeArrays(int[] a1, int[] a2){
-        int[] myArray3 = new int[a1.length+a2.length];
-        myArray3 = Arrays.copyOf(a1, a1.length + a2.length);
-        System.arraycopy(a1, 0, myArray3, 0, a1.length);
-        System.arraycopy(a2, 0, myArray3, a1.length, a2.length);
-        //String.join("", myArray3);
-        for (int j = 1; j<myArray3.length; j++){
-            if myArray3[j]
-        }
-        System.out.println(Arrays.toString(myArray3));
+    public static int[] mergeArrays(int[] a1, int[] a2) {
 
-        return myArray3;
+        int lenA1 = a1.length;
+        int lenA2 = a2.length;
+        int[] myArraySort = new int[lenA1 + lenA2];
+
+        Integer [] integerArray1 = IntStream.of(a1).boxed().toArray(Integer []::new);
+        Integer [] integerArray2 = IntStream.of(a2).boxed().toArray(Integer []::new);
+        List<Integer> listA1 = Arrays.asList(integerArray1);
+        List<Integer> listA2 = Arrays.asList(integerArray2);
+
+        int i = 0;
+        while (i <= myArraySort.length){
+            int a11 = listA1.get(i);
+            int a22 = listA2.get(i);
+            System.out.println("итерация"+ i);
+
+            if(a11 <= a22){
+                myArraySort[i] = a11;
+                listA2.add(0, 0);
+            }
+            else {
+                myArraySort[i] = a22;
+                listA1.add(0,0);
+            }
+            i++;
+        }
+
+        System.out.println(Arrays.toString(myArraySort));
+
+        return myArraySort;
     }
+
 }
+
+//Kira è scema :P
+//Ti amo

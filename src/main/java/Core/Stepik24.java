@@ -24,44 +24,54 @@ public class Stepik24 {
         int lenA2 = a2.length;
         int[] myArraySort = new int[lenA1 + lenA2];
 
+        /*
+        другой способ который не работает спижен
         Integer [] integerArray1 = IntStream.of(a1).boxed().toArray(Integer []::new);
         Integer [] integerArray2 = IntStream.of(a2).boxed().toArray(Integer []::new);
         List<Integer> listA1 = Arrays.asList(integerArray1);
         List<Integer> listA2 = Arrays.asList(integerArray2);
         System.out.println(listA2 instanceof List);
+         */
+        List<Integer> listA1 = new ArrayList<Integer>();
+
+        for (int g = 0; g < a1.length; g++) {
+            listA1.add(a1[g]);
+        }
+        List<Integer> listA2 = new ArrayList<Integer>();
+        for (int f = 0; f < a2.length; f++) {
+            listA2.add(a2[f]);
+        }
 
         int i = 0;
-        while (i <= myArraySort.length){
+        while (i <= myArraySort.length - 2) {
+            System.out.println("итерация" + i);
             int a11 = listA1.get(i);
             int a22 = listA2.get(i);
-            System.out.println("итерация"+ i);
-            System.out.println(a11);
-            System.out.println(a22);
-            ////////////////////////////
+            int limit = (myArraySort.length) - 2;
+            //System.out.println(limit);
+            if ( i == limit){
+                if (a11 > a22) {
+                    myArraySort[i] = a11;
+                } else {
+                    System.out.println("вошло");
+                    myArraySort[i] = a22;
+                    System.out.println(myArraySort[i]);
+                }
 
-            int myInt = 7;
-            List<Integer> list = new ArrayList<Integer>();
-            list.add(myInt);
-
-            System.out.println(list.get(0)); //prints 7
-            ///////////////////////////////////
-            if(a11 <= a22){
-                System.out.println("первое условие");
-                myArraySort[i] = a11;
-                System.out.println(myArraySort[i]);
-                int adAdd = 9;
-                listA2.add(adAdd);
-                System.out.println("идёт дальше");
-                System.out.println(listA2.get(0));
             }
-            else {
+
+            if (a11 <= a22) {
+                myArraySort[i] = a11;
+                listA2.add(0, 0);
+            } else {
                 myArraySort[i] = a22;
-                listA1.add(0,0);
+                listA1.add(0, 0);
             }
             i++;
         }
 
-        System.out.println(Arrays.toString(myArraySort));
+        //myArraySort[myArraySort.length -1] = 3;
+        System.out.println(Arrays.toString(myArraySort) + "lljmbvgfhjkl,lmknjbjvcvbhnjmklkjbvcvb");
 
         return myArraySort;
     }

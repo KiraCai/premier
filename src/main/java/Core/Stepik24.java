@@ -32,24 +32,25 @@ public class Stepik24 {
                 myArraySort[k] = a1[i];
                 i++;
                 if (i == lenA1){
-                    i--;
+                    myArraySort[k+1] = a2[j];
+                    break;
                 } else if (i>lenA1) {
                     break;
                 }
                 else{
-                    System.out.println("ничего не произошло");
                 }
             }
             else {
                 myArraySort[k] = a2[j];
                 j++;
+
                 if (j == lenA2){
-                    j--;
+                    myArraySort[k+1] = a1[i];
+                    break;
                 } else if (j>lenA2) {
                     break;
                 }
                 else {
-                    System.out.println("ничего не произошло 2");
                 }
             }
             k++;

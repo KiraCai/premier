@@ -33,7 +33,6 @@ public class Stepik24 {
         System.out.println(listA2 instanceof List);
          */
         List<Integer> listA1 = new ArrayList<Integer>();
-
         for (int g = 0; g < a1.length; g++) {
             listA1.add(a1[g]);
         }
@@ -41,25 +40,10 @@ public class Stepik24 {
         for (int f = 0; f < a2.length; f++) {
             listA2.add(a2[f]);
         }
-
         int i = 0;
         while (i <= myArraySort.length - 2) {
-            System.out.println("итерация" + i);
             int a11 = listA1.get(i);
             int a22 = listA2.get(i);
-            int limit = (myArraySort.length) - 2;
-            //System.out.println(limit);
-            if ( i == limit){
-                if (a11 > a22) {
-                    myArraySort[i] = a11;
-                } else {
-                    System.out.println("вошло");
-                    myArraySort[i] = a22;
-                    System.out.println(myArraySort[i]);
-                }
-
-            }
-
             if (a11 <= a22) {
                 myArraySort[i] = a11;
                 listA2.add(0, 0);
@@ -67,12 +51,18 @@ public class Stepik24 {
                 myArraySort[i] = a22;
                 listA1.add(0, 0);
             }
+            int limit = (myArraySort.length) - 2;
+            if ( i == limit){
+                if (a11 > a22) {
+                    myArraySort[i+1] = a11;
+                } else {
+                    myArraySort[i+1] = a22;
+                }
+            }
             i++;
         }
 
-        //myArraySort[myArraySort.length -1] = 3;
-        System.out.println(Arrays.toString(myArraySort) + "lljmbvgfhjkl,lmknjbjvcvbhnjmklkjbvcvb");
-
+        System.out.println(Arrays.toString(myArraySort));
         return myArraySort;
     }
 

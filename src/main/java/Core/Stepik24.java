@@ -24,43 +24,74 @@ public class Stepik24 {
         int lenA2 = a2.length;
         int[] myArraySort = new int[lenA1 + lenA2];
 
-        /*
-        другой способ который не работает спижен
-        Integer [] integerArray1 = IntStream.of(a1).boxed().toArray(Integer []::new);
-        Integer [] integerArray2 = IntStream.of(a2).boxed().toArray(Integer []::new);
-        List<Integer> listA1 = Arrays.asList(integerArray1);
-        List<Integer> listA2 = Arrays.asList(integerArray2);
-        System.out.println(listA2 instanceof List);
-         */
-        List<Integer> listA1 = new ArrayList<Integer>();
-        for (int g = 0; g < a1.length; g++) {
-            listA1.add(a1[g]);
-        }
-        List<Integer> listA2 = new ArrayList<Integer>();
-        for (int f = 0; f < a2.length; f++) {
-            listA2.add(a2[f]);
-        }
+        int k = 0;
         int i = 0;
-        while (i <= myArraySort.length - 2) {
-            int a11 = listA1.get(i);
-            int a22 = listA2.get(i);
-            if (a11 <= a22) {
-                myArraySort[i] = a11;
-                listA2.add(0, 0);
-            } else {
-                myArraySort[i] = a22;
-                listA1.add(0, 0);
-            }
-            int limit = (myArraySort.length) - 2;
-            if ( i == limit){
-                if (a11 > a22) {
-                    myArraySort[i+1] = a11;
-                } else {
-                    myArraySort[i+1] = a22;
+        int j = 0;
+        while(i< lenA1 | j < lenA2){
+            if(a1[i] <= a2[j]){
+                myArraySort[k] = a1[i];
+                i++;
+                if (i == lenA1){
+                    i--;
+                } else if (i>lenA1) {
+                    break;
                 }
+                else{
+                    System.out.println("ничего не произошло");
+                }
+            }
+            else {
+                myArraySort[k] = a2[j];
+                j++;
+                if (j == lenA2){
+                    j--;
+                } else if (j>lenA2) {
+                    break;
+                }
+                else {
+                    System.out.println("ничего не произошло 2");
+                }
+            }
+            k++;
+
+        }
+
+
+        /*int i = 0;
+        int a = i;
+        int b = i;
+        while (i <= myArraySort.length/2) {
+
+            if (a1[a] <= a2[b]) {
+                myArraySort[i] = a1[a];
+                a = a +1;
+                b = i;
+            } else {
+                myArraySort[i] = a2[b];
+                b = b +1;
+                a = i;
             }
             i++;
         }
+        var indexMidi =  (myArraySort.length/2)+1;
+        int k = 0;
+        a = k;
+        b = k;
+        while (k <= myArraySort.length/2-1) {
+
+            if (a1[a] <= a2[b]) {
+                myArraySort[indexMidi] = a1[a];
+                a = a +1;
+                b = k;
+            } else {
+                myArraySort[indexMidi] = a2[b];
+                b = b +1;
+                a = k;
+            }
+            indexMidi++;
+            k++;
+            }
+         */
 
         System.out.println(Arrays.toString(myArraySort));
         return myArraySort;

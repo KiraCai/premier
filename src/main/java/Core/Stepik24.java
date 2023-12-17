@@ -23,7 +23,6 @@ public class Stepik24 {
         int lenA1 = a1.length;
         int lenA2 = a2.length;
         int[] myArraySort = new int[lenA1 + lenA2];
-
         int k = 0;
         int i = 0;
         int j = 0;

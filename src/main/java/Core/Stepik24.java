@@ -14,9 +14,13 @@ import java.util.stream.IntStream;
 public class Stepik24 {
 
     public static void main(String[] args){
-        int[] myArray1 = {0, 2, 2};
-        int[] myArray2 = {1, 3};
+        int[] myArray1 = {0, 2, 2, 4};
+        int[] myArray2 = {1, 3, 5};
+
+        int[] myArray3 = {1, 3, 4};
+        int[] myArray4 = {0, 2, 2};
         System.out.println(mergeArrays(myArray1, myArray2));
+        System.out.println(mergeArrays(myArray3, myArray4));
     }
     public static int[] mergeArrays(int[] a1, int[] a2) {
 
@@ -26,77 +30,83 @@ public class Stepik24 {
         int k = 0;
         int i = 0;
         int j = 0;
-        while(i< lenA1 | j < lenA2){
-            if(a1[i] <= a2[j]){
-                myArraySort[k] = a1[i];
-                i++;
-                if (i == lenA1){
-                    myArraySort[k+1] = a2[j];
-                    break;
-                } else if (i>lenA1) {
-                    break;
-                }
-                else{
-                }
-            }
-            else {
-                myArraySort[k] = a2[j];
-                j++;
+        if (myArraySort.length % 2 != 0) {
+            while (i < lenA1 | j < lenA2) {
+                if (a1[i] <= a2[j]) {
+                    myArraySort[k] = a1[i];
+                    i++;
+                    if (i == lenA1) {
+                        myArraySort[k + 1] = a2[j];
+                        break;
+                    } else if (i > lenA1) {
+                        break;
+                    } else {
+                    }
+                } else {
+                    myArraySort[k] = a2[j];
+                    j++;
 
-                if (j == lenA2){
-                    myArraySort[k+1] = a1[i];
-                    break;
-                } else if (j>lenA2) {
-                    break;
+                    if (j == lenA2) {
+                        myArraySort[k + 1] = a1[i];
+                        break;
+                    } else if (j > lenA2) {
+                        break;
+                    } else {
+                    }
                 }
-                else {
-                }
+                k++;
             }
-            k++;
+        } else {
+            while (i < lenA1 | j < lenA2) {
+                if (a1[i] <= a2[j]) {
+                    if (k == myArraySort.length - 2) {
+                        myArraySort[k + 1] = a2[j];
+                        break;
+                    }
+                    myArraySort[k] = a1[i];
+                    i++;
+                    if (i == lenA1) {
 
+                        if (k == myArraySort.length - 2) {
+                            myArraySort[k + 1] = a2[j];
+                            break;
+                        } else {
+                            myArraySort[k + 1] = a2[j];
+                            i--;
+                            k++;
+                            j++;
+                            continue;
+                        }
+                    }
+                } else {
+                    if (k == myArraySort.length - 2) {
+                        myArraySort[k + 1] = a1[i];
+                        break;
+                    }
+                    myArraySort[k] = a2[j];
+                    j++;
+                    if (j == lenA2) {
+
+                        if (k == myArraySort.length - 2) {
+                            myArraySort[k + 1] = a1[i];
+                            break;
+                        } else {
+                            myArraySort[k + 1] = a1[i];
+                            j--;
+                            k++;
+                            i++;
+                            continue;
+                        }
+                    } else if (j > lenA2) {
+                        break;
+                    }
+                }
+                k++;
+            }
         }
-
-
-        /*int i = 0;
-        int a = i;
-        int b = i;
-        while (i <= myArraySort.length/2) {
-
-            if (a1[a] <= a2[b]) {
-                myArraySort[i] = a1[a];
-                a = a +1;
-                b = i;
-            } else {
-                myArraySort[i] = a2[b];
-                b = b +1;
-                a = i;
-            }
-            i++;
-        }
-        var indexMidi =  (myArraySort.length/2)+1;
-        int k = 0;
-        a = k;
-        b = k;
-        while (k <= myArraySort.length/2-1) {
-
-            if (a1[a] <= a2[b]) {
-                myArraySort[indexMidi] = a1[a];
-                a = a +1;
-                b = k;
-            } else {
-                myArraySort[indexMidi] = a2[b];
-                b = b +1;
-                a = k;
-            }
-            indexMidi++;
-            k++;
-            }
-         */
-
         System.out.println(Arrays.toString(myArraySort));
         return myArraySort;
     }
-
 }
 
 //Kira è scema :P

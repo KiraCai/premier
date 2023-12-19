@@ -14,11 +14,11 @@ import java.util.stream.IntStream;
 public class Stepik24 {
 
     public static void main(String[] args){
-        int[] myArray1 = {0, 2, 2, 4};
+        int[] myArray1 = {0, 1};
         int[] myArray2 = {1, 3, 5};
 
-        int[] myArray3 = {1, 3, 4};
-        int[] myArray4 = {0, 2, 2};
+        int[] myArray3 = {1, 1, 1};
+        int[] myArray4 = {3 , 3, 3};
         System.out.println(mergeArrays(myArray1, myArray2));
         System.out.println(mergeArrays(myArray3, myArray4));
     }
@@ -59,9 +59,24 @@ public class Stepik24 {
         } else {
             while (i < lenA1 | j < lenA2) {
                 if (a1[i] <= a2[j]) {
+                    if(myArraySort.length ==2){
+                        myArraySort[k] = a1[i];
+                        myArraySort[k+1] = a2[j];
+                    }
+
                     if (k == myArraySort.length - 2) {
                         myArraySort[k + 1] = a2[j];
                         break;
+                    }
+                    if (a1.length == i+1){
+                        if (k < myArraySort.length - 2){
+                            myArraySort[k] = a1[i];
+                        }
+                        myArraySort[k+1] = a2[j];
+                        j++;
+                        k++;
+                        continue;
+
                     }
                     myArraySort[k] = a1[i];
                     i++;
@@ -79,6 +94,11 @@ public class Stepik24 {
                         }
                     }
                 } else {
+                    if(myArraySort.length ==2){
+                        myArraySort[k] = a2[j];
+                        myArraySort[k+1] = a1[i];
+                        break;
+                    }
                     if (k == myArraySort.length - 2) {
                         myArraySort[k + 1] = a1[i];
                         break;

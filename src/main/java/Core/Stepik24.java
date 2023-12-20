@@ -90,6 +90,7 @@ public class Stepik24 {
                             k++;
                             j++;
                             continue;
+
                         }
                     }
                 } else {

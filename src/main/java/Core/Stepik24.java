@@ -76,7 +76,6 @@ public class Stepik24 {
                         j++;
                         k++;
                         continue;
-
                     }
                     myArraySort[k] = a1[i];
                     i++;

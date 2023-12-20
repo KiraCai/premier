@@ -17,8 +17,8 @@ public class Stepik24 {
         int[] myArray1 = {0, 1};
         int[] myArray2 = {1, 3, 5};
 
-        int[] myArray3 = {1, 1, 1};
-        int[] myArray4 = {3 , 3, 3};
+        int[] myArray3 = {1, 1, 1, 1};
+        int[] myArray4 = {3 , 3, 3, 3};
         System.out.println(mergeArrays(myArray1, myArray2));
         System.out.println(mergeArrays(myArray3, myArray4));
     }
@@ -68,10 +68,13 @@ public class Stepik24 {
                         myArraySort[k + 1] = a2[j];
                         break;
                     }
-                    if (a1.length == i+1){
-                        if (k < myArraySort.length - 2){
-                            myArraySort[k] = a1[i];
-                        }
+                    if (k == i && i == a1.length-1){
+                        myArraySort[k] = a1[i];
+                        i = a1.length-2;
+                        k++;
+                        continue;
+                    }
+                    if (a1.length == i+1 && k < myArraySort.length - 2){
                         myArraySort[k+1] = a2[j];
                         j++;
                         k++;

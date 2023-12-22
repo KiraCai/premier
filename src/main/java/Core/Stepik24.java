@@ -30,8 +30,8 @@ public class Stepik24 {
         int k = 0;
         int i = 0;
         int j = 0;
-        while (i< a1.length+1 || j < a2.length+1){
-            if ((a1[i]<a2[j]) & (i<a1.length)){
+        while (i < a1.length && j < a2.length){
+            if ((a1[i] < a2[j]) & (i < a1.length)){
                 myArraySort[k] = a1[i];
                 i++;
                 k++;
@@ -42,9 +42,20 @@ public class Stepik24 {
                 k++;
             }
         }
-
-
-
+        if (k < myArraySort.length-1){
+            while (k != myArraySort.length){
+                if(i == a1.length){
+                    myArraySort[k] = a2[j];
+                    k++;
+                    j++;
+                }
+                else{
+                    myArraySort[k] = a1[i];
+                    k++;
+                    i++;
+                }
+            }
+        }
 
         System.out.println(Arrays.toString(myArraySort));
         return myArraySort;

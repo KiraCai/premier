@@ -1,8 +1,5 @@
 package src.main.java.Core;
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
 
 /*
  * Merges two given sorted arrays into one
@@ -19,8 +16,26 @@ public class Stepik24 {
 
         int[] myArray3 = {1, 1, 2, 5};
         int[] myArray4 = {0, 4, 7, 8, 9};
-        System.out.println(mergeArrays(myArray1, myArray2));
-        System.out.println(mergeArrays(myArray3, myArray4));
+
+        int[] myArray5 = { };
+        int[] myArray6 = { };
+
+        int[] myArray7 = {1};
+        int[] myArray8 = { };
+
+        int[] myArray9 = {2, 2, 2};
+        int[] myArray10 = {2, 2, 2};
+
+        int[] myArray11 = {0, 4, 7, 8, 9};
+        int[] myArray12 = {1, 1, 2, 5};
+
+        System.out.println(Arrays.toString(mergeArrays(myArray1, myArray2)));
+        System.out.println(Arrays.toString(mergeArrays(myArray3, myArray4)));
+        System.out.println(Arrays.toString(mergeArrays(myArray5, myArray6)));
+        System.out.println(Arrays.toString(mergeArrays(myArray7, myArray8)));
+        System.out.println(Arrays.toString(mergeArrays(myArray9, myArray10)));
+        System.out.println(Arrays.toString(mergeArrays(myArray11, myArray12)));
+
     }
     public static int[] mergeArrays(int[] a1, int[] a2) {
 
@@ -30,34 +45,26 @@ public class Stepik24 {
         int k = 0;
         int i = 0;
         int j = 0;
-        while (i < a1.length && j < a2.length){
-            if ((a1[i] < a2[j]) & (i < a1.length)){
+        while (i < lenA1 && j < lenA2){
+            if ((a1[i] < a2[j]) & (i < lenA1)){
                 myArraySort[k] = a1[i];
                 i++;
                 k++;
-            }
-            else {
+            } else {
                 myArraySort[k] = a2[j];
                 j++;
                 k++;
             }
         }
+
         if (k < myArraySort.length-1){
-            while (k != myArraySort.length){
-                if(i == a1.length){
-                    myArraySort[k] = a2[j];
-                    k++;
-                    j++;
-                }
-                else{
-                    myArraySort[k] = a1[i];
-                    k++;
-                    i++;
-                }
+            int lenTail = myArraySort.length-k;
+            if (i == lenA1) {
+                System.arraycopy(a2, j, myArraySort, k, lenTail);
+            } else{
+                System.arraycopy(a1, i, myArraySort, k, lenTail);
             }
         }
-
-        System.out.println(Arrays.toString(myArraySort));
         return myArraySort;
     }
 }

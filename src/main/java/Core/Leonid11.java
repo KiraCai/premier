@@ -24,15 +24,10 @@ public class Leonid11 {
     public static int[] ArraySum(int[] a, int b){
         int[] arrSum = new int[2];
         //создадим новый массив вычев из пяти все значения и сравним с массивом какое совпадет то и берём
-        int[] arrBminusA = new int[a.length];
-        for(int i = 0; i<a.length; i++){
-            arrBminusA[i] = b - a[i];
-        }
-        //System.out.println(Arrays.toString(arrBminusA));
         int count = 0;
         for(int j = 0; j<a.length; j++){
-            for(int f = 0; f<arrBminusA.length; f++){
-                if(a[j] == arrBminusA[f]){
+            for(int f = 0; f<a.length; f++){
+                if(a[j] + a[f] == b){
                     arrSum[count] = j;
                     count++;
                     if(count == 2){

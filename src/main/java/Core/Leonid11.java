@@ -25,23 +25,19 @@ public class Leonid11 {
         int[] arrSum = new int[2];
         //создадим новый массив вычев из пяти все значения и сравним с массивом какое совпадет то и берём
         int count = 0;
-        for(int j = 0; j<a.length; j++){
-            for(int f = 0; f<a.length; f++){
-                if(a[j] + a[f] == b){
+        for (int j = 0; j < a.length; j++) {
+            for (int f = 0; f < a.length; f++) {
+                if (a[j] + a[f] == b) {
                     arrSum[count] = j;
                     count++;
-                    if(count == 2){
+                    if (count == 2) {
                         break;
                     }
                 }
             }
-            if(count == 2){
-                break;
-            }
         }
-        if (arrSum[1] == 0){
-            int[] arrVide = new int[0];
-            return arrVide;
+        if (arrSum[1] == 0) {
+            return new int[0];
         }
         return arrSum;
     }

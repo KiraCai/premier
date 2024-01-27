@@ -28,11 +28,7 @@ public class Leonid11 {
         for (int j = 0; j < a.length; j++) {
             for (int f = 0; f < a.length; f++) {
                 if (a[j] + a[f] == b) {
-                    arrSum[count] = j;
-                    count++;
-                    if (count == 2) {
-                        break;
-                    }
+                    return new int[]{j, f};
                 }
             }
         }

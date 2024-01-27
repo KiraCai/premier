@@ -19,7 +19,6 @@ public class Leonid11 {
         System.out.println(Arrays.toString(ArraySum(array1, numX1)));
     }
     public static int[] ArraySum(int[] a, int b){
-        int[] arrSum = new int[2];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 if (a[i] + a[j] == b) {
@@ -27,9 +26,6 @@ public class Leonid11 {
                 }
             }
         }
-        if (arrSum[1] == 0) {  //да, потому что если нет, он выведет массив с двумя нулями а не с одним пустой
-            return new int[0];
-        }
-        return arrSum;
+        return new int[0];
     }
 }

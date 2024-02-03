@@ -19,23 +19,25 @@ package src.main.java.Core;
  */
 public class task216 {
     public static void main(String[] args){
-    System.out.println(Dog.catchCat(Cat.sfinx));
+        System.out.println(lia.catchCat(mia.sayHello()));
     }
     public static class Cat {
-        static String sfinx;
+        //static String sfinx;
         public static String sayHello(){
             return "Мяу!";
         }
 
     }
+    static Cat mia = new Cat();
     public static class Dog {
         public static String sayHello(){
             return "Гав!";
         }
         public static String catchCat(String animals){
             System.out.println("Кошка поймана");
-            System.out.println(Dog.sayHello());
-            return Cat.sayHello();
+            System.out.println(lia.sayHello());
+            return mia.sayHello();
         }
     }
+    static Dog lia = new Dog();
 }

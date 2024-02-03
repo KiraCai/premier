@@ -22,7 +22,8 @@ Enum должен содеражить элементы на каждый ден
  */
 public class task217 {
     public static void main(String[] args){
-
+        System.out.println(Day.isWeekend("MONDAY"));
+        System.out.println(Day.isWeekend("SUNDAY"));
     }
     enum Day{
         MONDAY,
@@ -31,7 +32,9 @@ public class task217 {
         THURSDAY,
         FRIDAY,
         SATURDAY,
-        SUNDAY
-
+        SUNDAY;
+        public static boolean isWeekend(String day){
+            return day.equals( Day.SATURDAY) || day.equals(Day.SUNDAY);
+        }
     }
 }

@@ -24,6 +24,7 @@ public class task217 {
     public static void main(String[] args){
         System.out.println(Day.isWeekend("MONDAY"));
         System.out.println(Day.isWeekend("SUNDAY"));
+        System.out.println(Day.getRusName("TUESDAY"));
     }
     enum Day{
         MONDAY,
@@ -34,7 +35,32 @@ public class task217 {
         SATURDAY,
         SUNDAY;
         public static boolean isWeekend(String day){
-            return day.equals( Day.SATURDAY) || day.equals(Day.SUNDAY);
+            return day == Day.SATURDAY.toString() || day == Day.SUNDAY.toString();
+        }
+
+        public class Number{
+            Number dayType;
+            Number (Day da){
+                dayType = da;
+            }
+        }
+        public static String getRusName(String dayForRu){
+            Number ne = new Number();
+            String mon = Day.MONDAY.toString();
+            switch(dayForRu) {
+                case mon:
+                    System.out.println("Low level");
+                    break;
+                case TUESDAY:
+                    System.out.println("Medium level");
+                    break;
+                case WEDNESDAY:
+                    System.out.println("High level");
+                    break;
+            }
+            return "kjh";
+        }
+
         }
     }
-}
+

@@ -18,26 +18,30 @@ package src.main.java.Core;
 6. Собака должна ловить кошку.
  */
 public class task216 {
-    public static void main(String[] args){
-        System.out.println(lia.catchCat(mia.sayHello()));
+    public static void main(String[] args) {
+        System.out.println(Dog.catchCat(Cat.mia));
     }
+
     public static class Cat {
-        //static String sfinx;
-        public static String sayHello(){
+        static Cat mia = new Cat();
+
+        public static String sayHello() {
             return "Мяу!";
         }
 
     }
-    static Cat mia = new Cat();
+
     public static class Dog {
-        public static String sayHello(){
+        static Dog lia = new Dog();
+
+        public static String sayHello() {
             return "Гав!";
         }
-        public static String catchCat(String animals){
+
+        public static String catchCat(Object animals) {
             System.out.println("Кошка поймана");
             System.out.println(lia.sayHello());
-            return mia.sayHello();
+            return Cat.sayHello();
         }
     }
-    static Dog lia = new Dog();
 }

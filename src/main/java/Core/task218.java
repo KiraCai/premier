@@ -19,6 +19,7 @@ robot.stepForward();
 1. должен быть метод public static void moveRobot(Robot robot, int toX, int toY)
 2. метод moveRobot должен переместить робота в позицию int toX, int toY
  */
+
 public class task218 {
 
     public class Robot {

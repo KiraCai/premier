@@ -24,7 +24,7 @@ public class task217 {
     public static void main(String[] args){
         System.out.println(Day.isWeekend("MONDAY"));
         System.out.println(Day.isWeekend("SUNDAY"));
-        System.out.println(Day.getRusName("TUESDAY"));
+        System.out.println(Day.getRusName("THURSDAY"));
     }
     enum Day{
         MONDAY,
@@ -38,27 +38,25 @@ public class task217 {
             return day == Day.SATURDAY.toString() || day == Day.SUNDAY.toString();
         }
 
-        public class Number{
-            Number dayType;
-            Number (Day da){
-                dayType = da;
-            }
-        }
         public static String getRusName(String dayForRu){
-            Number ne = new Number();
-            String mon = Day.MONDAY.toString();
-            switch(dayForRu) {
-                case mon:
-                    System.out.println("Low level");
-                    break;
+            Day dayObject = Day.valueOf(dayForRu);
+            switch(dayObject) {
+                case MONDAY:
+                    return "Понедельник";
                 case TUESDAY:
-                    System.out.println("Medium level");
-                    break;
+                    return "Вторник";
                 case WEDNESDAY:
-                    System.out.println("High level");
-                    break;
+                    return "Среда";
+                case THURSDAY:
+                    return "Четверг";
+                case FRIDAY:
+                    return "Пятница";
+                case SATURDAY:
+                    return "Суббота";
+                case SUNDAY:
+                    return "Воскресенье";
             }
-            return "kjh";
+            return "такого дня нет";
         }
 
         }

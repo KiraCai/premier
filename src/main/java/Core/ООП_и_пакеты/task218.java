@@ -1,4 +1,4 @@
-package src.main.java.Core.ООП_и_пакеты;
+package src.main.java.Core;
 
 /*
 Работа с объектами

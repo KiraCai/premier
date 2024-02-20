@@ -62,8 +62,6 @@ public class task217 {
                     return "Воскресенье";
             }
             return "такого дня нет";
-        }
-
-        }
+        }}
     }
 

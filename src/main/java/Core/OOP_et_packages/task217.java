@@ -20,6 +20,7 @@ Enum должен содеражить элементы на каждый ден
 Сигнатура метода getRusName().
 Метод getRusName возвращает String.
  */
+
 public class task217 {
     public static void main(String[] args){
         Day day1 = Day.SUNDAY;
@@ -29,6 +30,7 @@ public class task217 {
         System.out.println(day2.isWeekend(day2));
         System.out.println(day2.getRusName(day2));
     }
+
     public enum Day{
         MONDAY,
         TUESDAY,

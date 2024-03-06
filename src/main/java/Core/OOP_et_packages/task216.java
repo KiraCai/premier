@@ -17,6 +17,7 @@ package src.main.java.Core.OOP_et_packages;
 5. Собака должна говорить «Гав!»
 6. Собака должна ловить кошку.
  */
+
 public class task216 {
     public static void main(String[] args) {
         Cat mia = new Cat();
@@ -36,7 +37,7 @@ public class task216 {
             return "Гав!";
         }
 
-        public static String catchCat(Object animals) {
+        public static String catchCat(Cat animals) {
             System.out.println("Кошка поймана");
             System.out.println(Dog.sayHello());
             return Cat.sayHello();

@@ -27,20 +27,23 @@ public class task216 {
 
     public static class Cat {
         public static String sayHello() {
-            return "Мяу!";
+                System.out.println("Мяу!");
+                return "";
         }
 
     }
 
     public static class Dog {
         public static String sayHello() {
-            return "Гав!";
+            System.out.println("Гав!");
+            return "";
         }
 
-        public static String catchCat(Cat animals) {
+        public static String catchCat(Cat cat) {
             System.out.println("Кошка поймана");
-            System.out.println(Dog.sayHello());
-            return Cat.sayHello();
+            Dog.sayHello();
+            cat.sayHello();
+            return "";
         }
     }
 }

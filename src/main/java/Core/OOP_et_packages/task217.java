@@ -22,13 +22,33 @@ Enum должен содеражить элементы на каждый ден
  */
 
 public class task217 {
+
     public static void main(String[] args){
-        Day day1 = Day.SUNDAY;
-        System.out.println(day1.isWeekend(day1));
-        System.out.println(day1.getRusName(day1));
-        Day day2 = Day.MONDAY;
-        System.out.println(day2.isWeekend(day2));
-        System.out.println(day2.getRusName(day2));
+        var dayOfWeek = Day.SUNDAY;
+        switch (dayOfWeek) {
+            case SUNDAY:
+                dayOfWeek.isWeekend();
+                break;
+            case MONDAY:
+                System.out.println("не выходной");
+                break;
+            case TUESDAY:
+                System.out.println("не выходной");
+                break;
+            case WEDNESDAY:
+                System.out.println("не выходной");
+                break;
+            case THURSDAY:
+                System.out.println("не выходной");
+                break;
+            case FRIDAY:
+                System.out.println("не выходной");
+                break;
+            case SATURDAY:
+                dayOfWeek.isWeekend();
+                break;
+
+        }
     }
 
     public enum Day{
@@ -39,11 +59,12 @@ public class task217 {
         FRIDAY,
         SATURDAY,
         SUNDAY;
-        public boolean isWeekend(Object da){
-            return da == Day.SATURDAY || da == Day.SUNDAY; //tr == Day.SATURDAY.toString() || tr == Day.SUNDAY.toString();
+        public boolean isWeekend(){
+            System.out.println("Выходной");
+            return true;
         }
 
-        public String getRusName(Object dayForRu){
+        /*public String getRusName(){
             String dayString = String.valueOf(dayForRu); //.toString(dayForRu); //Day.valueOf(dayForRu);
             switch(dayString) {
                 case "MONDAY":
@@ -62,6 +83,6 @@ public class task217 {
                     return "Воскресенье";
             }
             return "такого дня нет";
-        }}
+        }*/}
     }
 

@@ -47,9 +47,10 @@ public class task217 {
             case SATURDAY:
                 dayOfWeek.isWeekend();
                 break;
-
         }
+        System.out.println(Day.getRusName());
     }
+    private static Day dayOfWe = Day.SUNDAY;
 
     public enum Day{
         MONDAY,
@@ -63,26 +64,29 @@ public class task217 {
             System.out.println("Выходной");
             return true;
         }
+        public static Day getDayOfWeek() {
+            return dayOfWe;
+        }
+        public static String getRusName() {
 
-        /*public String getRusName(){
-            String dayString = String.valueOf(dayForRu); //.toString(dayForRu); //Day.valueOf(dayForRu);
-            switch(dayString) {
-                case "MONDAY":
+            switch(Day.getDayOfWeek()) {
+                case MONDAY:
                     return "Понедельник";
-                case "TUESDAY":
+                case TUESDAY:
                     return "Вторник";
-                case "WEDNESDAY":
+                case WEDNESDAY:
                     return "Среда";
-                case "THURSDAY":
+                case THURSDAY:
                     return "Четверг";
-                case "FRIDAY":
+                case FRIDAY:
                     return "Пятница";
-                case "SATURDAY":
+                case SATURDAY:
                     return "Суббота";
-                case "SUNDAY":
+                case SUNDAY:
                     return "Воскресенье";
             }
             return "такого дня нет";
-        }*/}
+        }
+        }
     }
 

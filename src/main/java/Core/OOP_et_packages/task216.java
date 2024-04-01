@@ -19,29 +19,29 @@ package src.main.java.Core.OOP_et_packages;
  */
 
 public class task216 {
+
     public static void main(String[] args) {
         Cat mia = new Cat();
         Dog lia = new Dog();
-        System.out.println(lia.catchCat(mia));
+        System.out.println(lia.catchCat(mia, lia));
     }
 
-    public static class Cat {
-        public static String sayHello() {
+    public class Cat {
+        public String sayHello() {
                 System.out.println("Мяу!");
                 return "";
         }
-
     }
 
-    public static class Dog {
-        public static String sayHello() {
+    public class Dog {
+        public String sayHello() {
             System.out.println("Гав!");
             return "";
         }
 
-        public static String catchCat(Cat cat) {
+        public String catchCat(Cat cat, Dog dog) {
             System.out.println("Кошка поймана");
-            Dog.sayHello();
+            dog.sayHello();
             cat.sayHello();
             return "";
         }

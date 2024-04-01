@@ -48,44 +48,30 @@ public class task217 {
                 dayOfWeek.isWeekend();
                 break;
         }
-        System.out.println(Day.getRusName());
+        System.out.println(dayOfWeek.getRusName());
     }
-    private static Day dayOfWe = Day.SUNDAY;
 
     public enum Day{
-        MONDAY,
-        TUESDAY,
-        WEDNESDAY,
-        THURSDAY,
-        FRIDAY,
-        SATURDAY,
-        SUNDAY;
+        MONDAY("Понедельник"),
+        TUESDAY("Вторник"),
+        WEDNESDAY("Среда"),
+        THURSDAY("Четверг"),
+        FRIDAY("Пятница"),
+        SATURDAY("Суббота"),
+        SUNDAY("Воскресенье");
+
+        private String rusName;
+
+        Day(String rusName) {
+            this.rusName = rusName;
+        }
+        public String getRusName() {
+            return rusName;
+        }
+
         public boolean isWeekend(){
             System.out.println("Выходной");
             return true;
-        }
-        public static Day getDayOfWeek() {
-            return dayOfWe;
-        }
-        public static String getRusName() {
-
-            switch(Day.getDayOfWeek()) {
-                case MONDAY:
-                    return "Понедельник";
-                case TUESDAY:
-                    return "Вторник";
-                case WEDNESDAY:
-                    return "Среда";
-                case THURSDAY:
-                    return "Четверг";
-                case FRIDAY:
-                    return "Пятница";
-                case SATURDAY:
-                    return "Суббота";
-                case SUNDAY:
-                    return "Воскресенье";
-            }
-            return "такого дня нет";
         }
         }
     }

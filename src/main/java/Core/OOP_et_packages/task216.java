@@ -23,7 +23,7 @@ public class task216 {
     public static void main(String[] args) {
         Cat mia = new Cat();
         Dog lia = new Dog();
-        System.out.println(lia.catchCat(mia, lia));
+        System.out.println(lia.catchCat(mia));
     }
 
     public static class Cat {
@@ -38,9 +38,9 @@ public class task216 {
             return "";
         }
 
-        public String catchCat(Cat cat, Dog dog) {
+        public String catchCat(Cat cat) {
             System.out.println("Кошка поймана");
-            dog.sayHello();
+            System.out.println("Гав!");
             cat.sayHello();
             return "";
         }

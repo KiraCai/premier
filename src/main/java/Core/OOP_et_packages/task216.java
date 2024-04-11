@@ -40,7 +40,7 @@ public class task216 {
 
         public String catchCat(Cat cat) {
             System.out.println("Кошка поймана");
-            System.out.println("Гав!");
+            this.sayHello();
             cat.sayHello();
             return "";
         }

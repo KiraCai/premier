@@ -25,54 +25,31 @@ public class task217 {
 
     public static void main(String[] args){
         var dayOfWeek = Day.SUNDAY;
-        switch (dayOfWeek) {
-            case SUNDAY:
-                dayOfWeek.isWeekend();
-                break;
-            case MONDAY:
-                System.out.println("не выходной");
-                break;
-            case TUESDAY:
-                System.out.println("не выходной");
-                break;
-            case WEDNESDAY:
-                System.out.println("не выходной");
-                break;
-            case THURSDAY:
-                System.out.println("не выходной");
-                break;
-            case FRIDAY:
-                System.out.println("не выходной");
-                break;
-            case SATURDAY:
-                dayOfWeek.isWeekend();
-                break;
-        }
         System.out.println(dayOfWeek.getRusName());
+        System.out.println(dayOfWeek.isWeekend());
     }
 
     public enum Day{
-        MONDAY("Понедельник"),
-        TUESDAY("Вторник"),
-        WEDNESDAY("Среда"),
-        THURSDAY("Четверг"),
-        FRIDAY("Пятница"),
-        SATURDAY("Суббота"),
-        SUNDAY("Воскресенье");
+        MONDAY("Понедельник", false),
+        TUESDAY("Вторник", false),
+        WEDNESDAY("Среда", false),
+        THURSDAY("Четверг", false),
+        FRIDAY("Пятница", false),
+        SATURDAY("Суббота", true),
+        SUNDAY("Воскресенье", true);
 
         private String rusName;
+        private Boolean weekendName;
 
-        Day(String rusName) {
+
+        Day(String rusName, Boolean weekendName) {
             this.rusName = rusName;
+            this.weekendName = weekendName;
         }
         public String getRusName() {
             return rusName;
         }
-
-        public boolean isWeekend(){
-            System.out.println("Выходной");
-            return true;
-        }
+        public Boolean isWeekend(){ return weekendName; }
         }
     }
 

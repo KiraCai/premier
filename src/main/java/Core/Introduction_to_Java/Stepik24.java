@@ -36,6 +36,7 @@ public class Stepik24 {
         System.out.println(Arrays.toString(mergeArrays(myArray9, myArray10)));
         System.out.println(Arrays.toString(mergeArrays(myArray11, myArray12)));
 
+
     }
     public static int[] mergeArrays(int[] a1, int[] a2) {
 

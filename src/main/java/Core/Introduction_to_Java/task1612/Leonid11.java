@@ -1,4 +1,4 @@
-package src.main.java.Core;
+package src.main.java.Core.Introduction_to_Java.task1612;
 import java.util.Arrays;
 
 

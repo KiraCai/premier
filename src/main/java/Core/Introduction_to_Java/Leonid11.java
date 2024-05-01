@@ -15,10 +15,10 @@ public class Leonid11 {
         int numX = 5;
         int[] array1 = new int[] {2, 4, 5, 9, 8};
         int numX1 = 5;
-        System.out.println(Arrays.toString(getSum(array, numX)));
-        System.out.println(Arrays.toString(getSum(array1, numX1)));
+        System.out.println(Arrays.toString(ArraySum(array, numX)));
+        System.out.println(Arrays.toString(ArraySum(array1, numX1)));
     }
-    public static int[] getSum(int[] a, int b){
+    public static int[] ArraySum(int[] a, int b){
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
                 if (a[i] + a[j] == b) {

@@ -39,11 +39,21 @@ public class task218 {
         task218.moveRobot(robo, toX, toY);
         robo.getX();
         robo.getY();
+        robo.getDirection();
 
     }
 
     public static void moveRobot(task218 robot, int toX, int toY) {
-        //Твой код здесь
+        int deltaX = toX - robot.getX();
+        int deltaY = toY - robot.getY();
+        if (deltaX > 0){
+            robot.stepForward();
+            // идем по этому направлению
+        }
+        if (deltaY > 0) {
+            robot.stepForward();
+            // идем по этому направлению
+        }
 
     }
 
@@ -55,16 +65,19 @@ public class task218 {
     }
 
     public Direction getDirection() {
-            UP;
+           var nowDir = Direction.UP;
+           return nowDir;
         }
 
     public int getX() {
          int x = 0;
+         return x;
             // текущая координата X
         }
 
         public int getY() {
          int y = 0;
+         return y;
             // текущая координата Y
         }
 

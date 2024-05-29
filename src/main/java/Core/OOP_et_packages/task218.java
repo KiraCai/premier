@@ -15,13 +15,9 @@ package src.main.java.Core.OOP_et_packages;
 robot.getDirection() == Direction.UP
 
 Чтобы привести робота в указанную точку (3, 0), метод должен вызвать у робота следующие методы:
-
-robot.turnRight();
-
+robot.turnRight()
 robot.stepForward();
-
 robot.stepForward();
-
 robot.stepForward();
 
 Требования:

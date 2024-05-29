@@ -50,52 +50,52 @@ public class task218 {
         int deltaX = toX - robot.getX();
         int deltaY = toY - robot.getY();
         var nowDir = Direction.UP;
-        if(deltaX < 0){ // движение влево
-            if (nowDir == Direction.UP){   // один поворот робота
+        if (deltaX < 0) { // движение влево
+            if (nowDir == Direction.UP) {   // один поворот робота
                 robot.turnLeft();
                 nowDir = Direction.LEFT;
-            } else if (nowDir == Direction.DOWN){
+            } else if (nowDir == Direction.DOWN) {
                 robot.turnRight();
                 nowDir = Direction.LEFT;
             }
 
-            for (int i = 0; i > deltaX; i -= 1){
+            for (int i = 0; i > deltaX; i -= 1) {
                 robot.stepForward();
             }
-        } else if (deltaX>0) { // движение вправо
-            if (nowDir == Direction.UP){   // один поворот робота
+        } else if (deltaX > 0) { // движение вправо
+            if (nowDir == Direction.UP) {   // один поворот робота
                 robot.turnRight();
                 nowDir = Direction.RIGHT;
-            } else if (nowDir == Direction.DOWN){
+            } else if (nowDir == Direction.DOWN) {
                 robot.turnLeft();
                 nowDir = Direction.RIGHT;
             }
-            for (int i = 0; i < deltaX; i += 1){
+            for (int i = 0; i < deltaX; i += 1) {
                 robot.stepForward();
             }
         }
 
-        if(deltaY < 0){ // движение вниз
-            if (nowDir == Direction.LEFT){   // один поворот робота
+        if (deltaY < 0) { // движение вниз
+            if (nowDir == Direction.LEFT) {   // один поворот робота
                 robot.turnLeft();
                 nowDir = Direction.DOWN;
-            } else if (nowDir == Direction.RIGHT){
+            } else if (nowDir == Direction.RIGHT) {
                 robot.turnRight();
                 nowDir = Direction.DOWN;
             }
 
-            for (int i = 0; i > deltaY; i -= 1){
+            for (int i = 0; i > deltaY; i -= 1) {
                 robot.stepForward();
             }
-        } else if (deltaY>0) { // движение вверх
-            if (nowDir == Direction.LEFT){   // один поворот робота
+        } else if (deltaY > 0) { // движение вверх
+            if (nowDir == Direction.LEFT) {   // один поворот робота
                 robot.turnRight();
                 nowDir = Direction.UP;
-            } else if (nowDir == Direction.RIGHT){
+            } else if (nowDir == Direction.RIGHT) {
                 robot.turnLeft();
                 nowDir = Direction.UP;
             }
-            for (int i = 0; i < deltaY; i += 1){
+            for (int i = 0; i < deltaY; i += 1) {
                 robot.stepForward();
             }
         }
@@ -125,10 +125,16 @@ public class task218 {
         // текущая координата Y
     }
 
-    public void turnLeft() {System.out.println("повернуться на 90 градусов против часовой стрелки");}
+    public void turnLeft() {
+        System.out.println("повернуться на 90 градусов против часовой стрелки");
+    }
 
-    public void turnRight() {System.out.println("повернуться на 90 градусов по часовой стрелке");}
+    public void turnRight() {
+        System.out.println("повернуться на 90 градусов по часовой стрелке");
+    }
 
-    public void stepForward() {System.out.println("шаг в направлении взгляда");}
+    public void stepForward() {
+        System.out.println("шаг в направлении взгляда");
+    }
 
 }

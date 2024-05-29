@@ -33,26 +33,71 @@ robot.stepForward();
 public class task218 {
 
     public static void main(String[] args) {
-        int toX = 3;
-        int toY = 0;
+        int toX = 8;
+        int toY = 5;
         task218 robo = new task218();
-        task218.moveRobot(robo, toX, toY);
-        robo.getX();
-        robo.getY();
-        robo.getDirection();
+        robo.moveRobot(robo, toX, toY);
+        System.out.println("");
+        System.out.println("другой робот");
+        int toX1 = 2;
+        int toY1 = 1;
+        task218 robo1 = new task218();
+        robo.moveRobot(robo1, toX1, toY1);
 
     }
 
     public static void moveRobot(task218 robot, int toX, int toY) {
         int deltaX = toX - robot.getX();
         int deltaY = toY - robot.getY();
-        if (deltaX > 0){
-            robot.stepForward();
-            // идем по этому направлению
+        var nowDir = Direction.UP;
+        if(deltaX < 0){ // движение влево
+            if (nowDir == Direction.UP){   // один поворот робота
+                robot.turnLeft();
+                nowDir = Direction.LEFT;
+            } else if (nowDir == Direction.DOWN){
+                robot.turnRight();
+                nowDir = Direction.LEFT;
+            }
+
+            for (int i = 0; i > deltaX; i -= 1){
+                robot.stepForward();
+            }
+        } else if (deltaX>0) { // движение вправо
+            if (nowDir == Direction.UP){   // один поворот робота
+                robot.turnRight();
+                nowDir = Direction.RIGHT;
+            } else if (nowDir == Direction.DOWN){
+                robot.turnLeft();
+                nowDir = Direction.RIGHT;
+            }
+            for (int i = 0; i < deltaX; i += 1){
+                robot.stepForward();
+            }
         }
-        if (deltaY > 0) {
-            robot.stepForward();
-            // идем по этому направлению
+
+        if(deltaY < 0){ // движение вниз
+            if (nowDir == Direction.LEFT){   // один поворот робота
+                robot.turnLeft();
+                nowDir = Direction.DOWN;
+            } else if (nowDir == Direction.RIGHT){
+                robot.turnRight();
+                nowDir = Direction.DOWN;
+            }
+
+            for (int i = 0; i > deltaY; i -= 1){
+                robot.stepForward();
+            }
+        } else if (deltaY>0) { // движение вверх
+            if (nowDir == Direction.LEFT){   // один поворот робота
+                robot.turnRight();
+                nowDir = Direction.UP;
+            } else if (nowDir == Direction.RIGHT){
+                robot.turnLeft();
+                nowDir = Direction.UP;
+            }
+            for (int i = 0; i < deltaY; i += 1){
+                robot.stepForward();
+            }
         }
 
     }
@@ -64,33 +109,26 @@ public class task218 {
         RIGHT
     }
 
-    public Direction getDirection() {
-           var nowDir = Direction.UP;
-           return nowDir;
-        }
+    /*public Direction getDirection(Object direc) {
+        return direc;
+    }*/
 
     public int getX() {
-         int x = 0;
-         return x;
-            // текущая координата X
-        }
-
-        public int getY() {
-         int y = 0;
-         return y;
-            // текущая координата Y
-        }
-
-        public void turnLeft() {
-            // повернуться на 90 градусов против часовой стрелки
-        }
-        public void turnRight() {
-            // повернуться на 90 градусов по часовой стрелке
-        }
-
-    public void stepForward() {
-        // шаг в направлении взгляда
-        // за один шаг робот изменяет одну свою координату на единицу
+        int x = 5;
+        return x;
+        // текущая координата X
     }
+
+    public int getY() {
+        int y = 5;
+        return y;
+        // текущая координата Y
+    }
+
+    public void turnLeft() {System.out.println("повернуться на 90 градусов против часовой стрелки");}
+
+    public void turnRight() {System.out.println("повернуться на 90 градусов по часовой стрелке");}
+
+    public void stepForward() {System.out.println("шаг в направлении взгляда");}
 
 }

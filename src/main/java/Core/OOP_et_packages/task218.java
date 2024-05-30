@@ -105,9 +105,9 @@ public class task218 {
         RIGHT
     }
 
-    /*public Direction getDirection(Object direc) {
+    public Direction getDirection(Object direc) {
         return direc;
-    }*/
+    }
 
     public int getX() {
         int x = 5;

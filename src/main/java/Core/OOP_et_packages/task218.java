@@ -103,6 +103,7 @@ public class task218 {
         DOWN,
         LEFT,
         RIGHT
+
     }
 
     public Direction getDirection(Object direc) {

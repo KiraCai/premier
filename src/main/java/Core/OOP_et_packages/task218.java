@@ -39,10 +39,7 @@ public class task218 {
         int toY1 = 1;
         task218 robo1 = new task218();
         robo.moveRobot(robo1, toX1, toY1);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/2.1.8
     }
 
     public static void moveRobot(task218 robot, int toX, int toY) {

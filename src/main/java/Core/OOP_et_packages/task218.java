@@ -133,5 +133,5 @@ public class task218 {
     public void stepForward() {
         System.out.println("шаг в направлении взгляда");
     }
-
+        //посмотреть
 }

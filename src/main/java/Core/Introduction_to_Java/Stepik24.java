@@ -1,11 +1,6 @@
 package src.main.java.Core.Introduction_to_Java;
 import java.util.Arrays;
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-=======
->>>>>>> origin/2.1.8
+
 
 /*
  * Merges two given sorted arrays into one
@@ -20,14 +15,13 @@ public class Stepik24 {
         int[] myArray1 = {0, 1};
         int[] myArray2 = {1, 3, 5};
 
-<<<<<<< HEAD
+
         int[] myArray3 = {1, 1, 1};
         int[] myArray4 = {3 , 3, 3};
         System.out.println(mergeArrays(myArray1, myArray2));
         System.out.println(mergeArrays(myArray3, myArray4));
-=======
-        int[] myArray3 = {1, 1, 2, 5};
-        int[] myArray4 = {0, 4, 7, 8, 9};
+
+
 
         int[] myArray5 = { };
         int[] myArray6 = { };
@@ -48,7 +42,7 @@ public class Stepik24 {
         System.out.println(Arrays.toString(mergeArrays(myArray9, myArray10)));
         System.out.println(Arrays.toString(mergeArrays(myArray11, myArray12)));
 
->>>>>>> origin/2.1.8
+
     }
     public static int[] mergeArrays(int[] a1, int[] a2) {
 
@@ -58,7 +52,7 @@ public class Stepik24 {
         int k = 0;
         int i = 0;
         int j = 0;
-<<<<<<< HEAD
+
         if (myArraySort.length % 2 != 0) {
             while (i < lenA1 | j < lenA2) {
                 if (a1[i] <= a2[j]) {
@@ -153,7 +147,7 @@ public class Stepik24 {
             }
         }
         System.out.println(Arrays.toString(myArraySort));
-=======
+
         while (i < lenA1 && j < lenA2){
             if ((a1[i] < a2[j]) & (i < lenA1)){
                 myArraySort[k] = a1[i];
@@ -174,7 +168,7 @@ public class Stepik24 {
                 System.arraycopy(a1, i, myArraySort, k, lenTail);
             }
         }
->>>>>>> origin/2.1.8
+
         return myArraySort;
     }
 }

@@ -1,4 +1,4 @@
-package src.main.java.Core.OOP_et_packages;
+package src.main.java.Core.OOP_et_packages.task219;
 
 /*
 Реализация equals() и hashCode()
@@ -23,62 +23,14 @@ ComplexNumber b = new ComplexNumber(1, 1);
 4. equals и hashcode должны корректно работать.
  */
 public class task219 {
-    private double re;
-
-    private double im;
-
-    public task219() {
-
-    }
 
     public static void main(String[] args) {
-        task219 a = new task219(1, 1);
-        task219 b = new task219(1, 1);
+        ComplexNumber a = new ComplexNumber(2, 1);
+        ComplexNumber b = new ComplexNumber(1, 1);
         System.out.println(a.equals(b));
-        System.out.println(a.hashCode(b));
-    }
-
-    public task219(double re, double im) {
-
-        this.re = re;
-
-        this.im = im;
-
-    }
-
-    public boolean equals(Object o) {
-
-        if (getClass() != o.getClass()) return false;
-        task219 other = (task219) o;
-
-        if (java.lang.Double.compare(this.re, other.getRe()) == 0) {
-            return true;
-        }
-        return false;
-    }
-
-    public int hashCode(Object p) {
-        Long hashLong = java.lang.Double.doubleToLongBits(this.re);
-        System.out.println(hashLong);
-        if (getClass() != p.getClass()) return 0;
-        task219 otherP = (task219) p;
-        Long hashLongB = java.lang.Double.doubleToLongBits(otherP.getRe());
-        System.out.println(hashLongB);
-        if (hashLong.equals(hashLongB)) {
-            return 1;
-        }
-        return 0;
-    }
-
-    public double getRe() {
-
-        return re;
-
-    }
-
-    public double getIm() {
-
-        return im;
+        if(a.hashCode() == b.hashCode()){
+          System.out.println("true");
+        } else {System.out.println("false");}
 
     }
 

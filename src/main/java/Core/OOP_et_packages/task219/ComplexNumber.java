@@ -5,10 +5,6 @@ public class ComplexNumber {
 
     private double im;
 
-    public ComplexNumber() {
-
-    }
-
     public ComplexNumber(double re, double im) {
 
         this.re = re;
@@ -21,16 +17,11 @@ public class ComplexNumber {
 
         if (getClass() != o.getClass()) return false;
         ComplexNumber other = (ComplexNumber) o;
-
-        if (java.lang.Double.compare(this.re, other.getRe()) == 0) {
-            return true;
-        }
-        return false;
+        return Double.compare(this.re, other.getRe()) == 0;
     }
     public int hashCode() {
         Double doubleRe = new Double(this.re);
         int intRe = doubleRe.intValue();
-        System.out.println(intRe);
         return intRe;
     }
     public double getRe() {

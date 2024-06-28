@@ -25,8 +25,8 @@ ComplexNumber b = new ComplexNumber(1, 1);
 public class task219 {
 
     public static void main(String[] args) {
-        ComplexNumber a = new ComplexNumber(2, 1);
-        ComplexNumber b = new ComplexNumber(1, 1);
+        ComplexNumber a = new ComplexNumber(2.127, 1);
+        ComplexNumber b = new ComplexNumber(2.789, 1);
         System.out.println(a.equals(b));
         if(a.hashCode() == b.hashCode()){
           System.out.println("true");

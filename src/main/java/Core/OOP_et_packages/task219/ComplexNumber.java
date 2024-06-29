@@ -12,7 +12,7 @@ public class ComplexNumber {
     public boolean equals(Object o) {
         if (getClass() != o.getClass()) return false;
         ComplexNumber other = (ComplexNumber) o;
-        return Double.compare(this.re, other.getRe()) == 0;
+        return Double.compare(this.re, other.getRe()) == 0 && Double.compare(this.im, other.getIm()) == 0;
     }
 
     public int hashCode() {

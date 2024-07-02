@@ -18,7 +18,10 @@ public class ComplexNumber {
     public int hashCode() {
         Double doubleRe = new Double(this.re);
         int intRe = doubleRe.intValue();
-        return intRe;
+        Double doubleIm = new Double(this.im);
+        int intIm = doubleIm.intValue();
+        int result = 31 * intRe + intIm;
+        return result;
     }
 
     public double getRe() {return re;}

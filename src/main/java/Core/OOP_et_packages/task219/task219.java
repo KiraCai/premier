@@ -31,6 +31,13 @@ public class task219 {
         if(a.hashCode() == b.hashCode()){
           System.out.println("true");
         } else {System.out.println("false");}
+        if (a.equals(b) == true && (a.hashCode() == b.hashCode())){
+            System.out.println("объекты одинаковые");
+        } else if (a.hashCode() != b.hashCode()){
+            System.out.println("объекты разные");
+        } else {
+            System.out.println("неизвестно одинаковые или разные объекты");
+        }
 
     }
 

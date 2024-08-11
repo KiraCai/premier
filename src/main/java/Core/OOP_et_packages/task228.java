@@ -45,35 +45,31 @@ public class task228 {
     }*/
 
     public static int weekendCount(String[] days) {
-        int i = 0;
         int countWeekend = 0;
-        while (i < days.length) {
+        for(String i : days){
             for (task217.Day dayEnum : task217.Day.values()) {
                 var dayString = dayEnum.toString();
-                if (days[i] == dayString) {
+                if (i.equals(dayString)) {
                     if (dayEnum.isWeekend()) { //считать когда выходной
                         countWeekend++;
                     }
                 }
             }
-            i++;
         }
         return countWeekend;
     }
 
     public static int weekdayCount(String[] days) {
-        int i = 0;
         int countWeekend = 0;
-        while (i < days.length) {
+        for (String i : days) {
             for (task217.Day dayEnum : task217.Day.values()) {
                 var dayString = dayEnum.toString();
-                if (days[i] == dayString) {
+                if (i.equals(dayString)) {
                     if (!dayEnum.isWeekend()) { //считать когда не выходной
                         countWeekend++;
                     }
                 }
             }
-            i++;
         }
         return countWeekend;
     }

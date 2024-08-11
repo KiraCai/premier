@@ -21,10 +21,6 @@ public class task227 {
     }
 
     public static int getMinFromTwo(int a, int b) {
-        if (a > b) {
-            return b;
-        } else {
-            return a;
-        }
+        return (a > b) ? b : a;
     }
 }

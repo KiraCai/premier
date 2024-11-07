@@ -48,7 +48,7 @@ public class Human {
     protected String getExperience(){
         return experience;
     }
-    private String getGossip(){
+    String getGossip(){
         return gossip;
     }
     public static void main(String[] args) {

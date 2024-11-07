@@ -40,16 +40,12 @@ public class task228 {
         System.out.println(weekdayCount(myArray));
     }
 
-    /*public static boolean isWeekend(String dayName) {
-        // вызывала метод класса который уже был создан, то есть task217
-    }*/
-
     public static int weekendCount(String[] days) {
         int countWeekend = 0;
         for(String day : days){
             for (task217.Day dayName : task217.Day.values()) {
                 if (day.equals(dayName.toString())) {
-                    if (dayName.isWeekend()) { //считать когда выходной
+                    if (dayName.isWeekend()) {
                         countWeekend++;
                     }
                 }
@@ -63,7 +59,7 @@ public class task228 {
         for (String day : days) {
             for (task217.Day dayName : task217.Day.values()) {
                 if (day.equals(dayName.toString())) {
-                    if (!dayName.isWeekend()) { //считать когда не выходной
+                    if (!dayName.isWeekend()) {
                         countWeekend++;
                     }
                 }

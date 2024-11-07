@@ -18,7 +18,7 @@ package src.main.java.Core.OOP_et_packages.task249;
 5. Метод study() вызванный у объектов JavaStudent должен выводить в консоль сообщение "Я очень занят.
  Прохожу курс по Java."
  */
-public static class Student {
+public class Student {
     protected final String studying;
     protected Student(String work) {
         this.studying = work;
@@ -30,8 +30,8 @@ public static class Student {
         System.out.println("Я очень занят. " + studying);
     }
 }
-public class JavaStudent extends Student{
-    public void study(){
-
-    }
+class JavaStudent extends Student{
+    /*public void study(){
+        System.out.println("kjhgf");
+    }*/
 }

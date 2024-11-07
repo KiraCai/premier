@@ -46,11 +46,10 @@ public class task228 {
 
     public static int weekendCount(String[] days) {
         int countWeekend = 0;
-        for(String i : days){
-            for (task217.Day dayEnum : task217.Day.values()) {
-                var dayString = dayEnum.toString();
-                if (i.equals(dayString)) {
-                    if (dayEnum.isWeekend()) { //считать когда выходной
+        for(String day : days){
+            for (task217.Day dayName : task217.Day.values()) {
+                if (day.equals(dayName.toString())) {
+                    if (dayName.isWeekend()) { //считать когда выходной
                         countWeekend++;
                     }
                 }
@@ -61,11 +60,10 @@ public class task228 {
 
     public static int weekdayCount(String[] days) {
         int countWeekend = 0;
-        for (String i : days) {
-            for (task217.Day dayEnum : task217.Day.values()) {
-                var dayString = dayEnum.toString();
-                if (i.equals(dayString)) {
-                    if (!dayEnum.isWeekend()) { //считать когда не выходной
+        for (String day : days) {
+            for (task217.Day dayName : task217.Day.values()) {
+                if (day.equals(dayName.toString())) {
+                    if (!dayName.isWeekend()) { //считать когда не выходной
                         countWeekend++;
                     }
                 }

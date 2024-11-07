@@ -29,9 +29,18 @@ public class Student {
     public void study() {
         System.out.println("Я очень занят. " + studying);
     }
+    public static void main(String[] args) {
+
+        JavaStudent studJ = new JavaStudent(String "mnjhgf");
+        System.out.println(studJ.studying);
+        studJ.study();
+        return;
+    }
+
 }
 class JavaStudent extends Student{
-    /*public void study(){
-        System.out.println("kjhgf");
-    }*/
+    public JavaStudent(){
+        super();
+    }
+
 }

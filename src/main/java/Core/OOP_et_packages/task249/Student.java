@@ -11,11 +11,4 @@ public class Student {
     public void study() {
         System.out.println("Я очень занят. " + studying);
     }
-    /*public static void main(String[] args) {
-
-        Student stuu = new Student("mnjhgf");
-        System.out.println(stuu.studying);
-        stuu.study();
-        return;
-    }*/
 }
